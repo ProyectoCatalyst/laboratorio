@@ -1,9 +1,9 @@
-'uses strict';
+'use strict';
 
-const gulp = require('gulp');
-connect = require('gulp-connect');
-nodemon = require('gulp-nodemon');
-browserSync = require('browser-sync');
+const gulp = require('gulp'),
+      connect = require('gulp-connect'),
+      nodemon = require('gulp-nodemon'),
+      browserSync = require('browser-sync');
 
 gulp.task('connect', () => {
   connect.server({
@@ -18,22 +18,26 @@ gulp.task('connect', () => {
 
 gulp.task('dependencies', () => {
   gulp.src([
-    './node_modules/angular/angular.min.js',
+    './node_modules/angular/angular.min.js'
+  ])
+  .pipe(gulp.dest('./public/lib/angular'));
+
+  gulp.src([
     './node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
     './node_modules/oclazyload/dist/ocLazyLoad.min.js'
   ])
-  .pipe(gulp.dest('./public/lib/angular'))
+    .pipe(gulp.dest('./public/lib/angular/routing'))
   gulp.src([
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/bootstrap/dist/css/bootstrap.min.css',
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/popper.js/dist/popper.min.js'
   ])
-  .pipe(gulp.dest('./public/lib/bootstrap'))
+  .pipe(gulp.dest('./public/lib/bootstrap'));
   gulp.src([
     './node_modules/sweetalert/dist/sweetalert.min.js',
   ])
-  .pipe(gulp.dest('./public/lib/sweetalert'))
+  .pipe(gulp.dest('./public/lib/sweetalert'));
 });
 
 gulp.task('reload', () => {

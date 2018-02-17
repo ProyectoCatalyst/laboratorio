@@ -9,6 +9,6 @@
         "route.js": "angular-routing",
         "app.js": "angular"
     },
-    "workbench.colorTheme": "Dark Chrome DevTools",
+    "workbench.colorTheme": "Sublime Material Theme - Dark",
     "editor.tabSize": 2
 }

@@ -30,7 +30,7 @@
     "gulp-nodemon": "^2.2.1"
   },
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.15",
+    "@uirouter/angularjs": "^1.0.7",
     "angular": "^1.6.9",
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
