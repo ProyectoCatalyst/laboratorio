@@ -8,13 +8,26 @@
   routing.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   // Forma del archivo de identificarse a sí mismo (tercer tipo de inyection por parametro)
-  function routing($stateProvider, $urlRouterProvider, $oclazyLoad) {
+  function routing($stateProvider, $urlRouterProvider, $ocLazyLoad) {
 
     $stateProvider
       .state('landingPage', {
         url: '/',
         templateUrl: './components/landingPage/landingPage.view.html'
+      })
+
+      .state('login', {
+        url: '/login',
+        templateUrl: './components/login/login.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/login/login.controller.js')
+          }]
+        },
+        controller: 'controladorInicioSesion',
+        controllerAs: 'vm'
       });
+
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
     $urlRouterProvider.otherwise('/');
   };
