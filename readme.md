@@ -1,4 +1,4 @@
-#Arquitectura básica de Proyecto Web 1
+#Laboratorio Funeraria Proyecto Web 1
 ##Guía de instalación:
 1- Clonar repositorio.
 2- Arrastrar carpeta dentro de terminar (cd carpeta).

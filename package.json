@@ -1,5 +1,5 @@
 {
-  "name": "arquitectura",
+  "name": "laboratorio",
   "version": "1.0.0",
   "description": "Arquitectura de proyecto",
   "main": "./public/app.js",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProyectoCatalyst/arquitectura.git"
+    "url": "git+https://github.com/ProyectoCatalyst/laboratorio.git"
   },
   "keywords": [
-    "MIN",
+    "MEAN",
     "ANGULARJS",
     "BOOTSTRAP4",
     "JQUERY",
@@ -30,7 +30,7 @@
     "gulp-nodemon": "^2.2.1"
   },
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.7",
+    "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.9",
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
