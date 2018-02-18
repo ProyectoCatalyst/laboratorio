@@ -26,6 +26,18 @@
         },
         controller: 'controladorInicioSesion',
         controllerAs: 'vm'
+      })
+
+      .state('register', {
+        url: '/register',
+        templateUrl: './components/users/registerUsers/registerUsers.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/users/registerUsers/registerUsers.controller.js')
+          }]
+        },
+        controller: 'controladorRegistrarUsuario',
+        controllerAs: 'vm'
       });
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)

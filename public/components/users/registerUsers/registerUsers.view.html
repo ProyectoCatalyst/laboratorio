@@ -1,0 +1,67 @@
+<div ng-include="'./components/includes/_header.html'"></div>
+<section class="row">
+  <div class="container">
+    <form class="row" ng-submit="vm.registrarUsuario(vm.usuarioNuevo)">
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="txtNombre">Nombre</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.nombre" id="txtNombre">
+        </div>
+        <div class="form-group">
+          <label for="txtPrimerApellido">Primer Apellido</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.primerApellido" id="txtPrimerApellido">
+        </div>
+        <div class="form-group">
+          <label for="txtSegundoApellido">Segundo Apellido</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.segundoApellido" id="txtSegundoApellido">
+        </div>
+        <div class="form-group">
+          <label for="txtCedula">Cédula</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.cedula" id="txtCedular">
+        </div>
+        <div class="form-group">
+          <label for="txtFecha">Fecha</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.fecha" id="txtFecha">
+        </div>
+        <div class="form-group">
+          <label for="txtGenero">Género</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.genero" id="txtGenero">
+        </div>
+        <div class="form-group">
+          <label for="txtFoto">Foto</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.foto" id="txtFoto">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="txtUbicacion">Ubicación</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.ubicacion" id="txtUbicacion">
+        </div>
+        <div class="form-group">
+          <label for="txtProvincia">Provincia</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.provincia" id="txtProvincia">
+        </div>
+        <div class="form-group">
+          <label for="txtCanton">Cantón</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.canton" id="txtCanton">
+        </div>
+        <div class="form-group">
+          <label for="txtDistrito">Distrito</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.distrito" id="txtDistrito">
+        </div>
+        <div class="form-group">
+          <label for="txtUsuario">Usuario</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.usuario" id="txtUsuario">
+        </div>
+        <div class="form-group">
+          <label for="txtContrasenna">Contraseña</label>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.contrasenna" id="txtContrasenna">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+    </form>
+  </div>
+</section>
+<!-- <div ng-include="'./components/includes/_footer.html'"></div> -->
