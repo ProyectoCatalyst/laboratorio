@@ -1,32 +1,35 @@
 <div ng-include="'./components/includes/_header.html'"></div>
 <section class="row">
   <div class="container">
-    <form class="row" ng-submit="vm.registrarUsuario(vm.usuarioNuevo)">
-
-      <div class="col-md-6">
+    <form class="row" name="frmRegistroUsuarios" ng-submit="vm.registrarUsuario(vm.usuarioNuevo)">
+      <div class="col-md-4">
         <div class="form-group">
           <label for="txtNombre">Nombre</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.nombre" id="txtNombre">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.nombre" pattern="[a-zA-Z]+[-_]*[a-zA-Z]+"  id="txtNombre" required>
         </div>
         <div class="form-group">
           <label for="txtPrimerApellido">Primer Apellido</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.primerApellido" id="txtPrimerApellido">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.primerApellido" pattern="[a-zA-Z]+[-_]*[a-zA-Z]+" id="txtPrimerApellido">
         </div>
         <div class="form-group">
           <label for="txtSegundoApellido">Segundo Apellido</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.segundoApellido" id="txtSegundoApellido">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.segundoApellido" pattern="[a-zA-Z]+[-_]*[a-zA-Z]+" id="txtSegundoApellido">
         </div>
         <div class="form-group">
           <label for="txtCedula">Cédula</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.cedula" id="txtCedular">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.cedula" pattern="[0-9]+" id="txtCedular">
         </div>
         <div class="form-group">
           <label for="txtFecha">Fecha</label>
           <input type="text" class="form-control" ng-model="vm.usuarioNuevo.fecha" id="txtFecha">
         </div>
         <div class="form-group">
-          <label for="txtGenero">Género</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.genero" id="txtGenero">
+            <label for="txtGenero">Género</label>
+          <select class="custom-select" ng-model="vm.usuarioNuevo.genero" placeholder="Seleccione una opción" id="txtGenero">
+            <option value="1">Femenino</option>
+            <option value="2">Masculino</option>
+            <option value="3">Sexualmente diverso</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="txtFoto">Foto</label>
@@ -34,7 +37,7 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="form-group">
           <label for="txtUbicacion">Ubicación</label>
           <input type="text" class="form-control" ng-model="vm.usuarioNuevo.ubicacion" id="txtUbicacion">
@@ -60,7 +63,11 @@
           <input type="text" class="form-control" ng-model="vm.usuarioNuevo.contrasenna" id="txtContrasenna">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+
+      <div class="col-md-12">
+          <button type="submit" class="btn btn-primary" ng-disabled="frmRegistroUsuarios.$error">Registrar Usuario</button>
+      </div>
+      
     </form>
   </div>
 </section>
