@@ -1,0 +1,331 @@
+[
+	{
+		"idProvincia": "0",
+		"name": "San José",
+		"_id": "1"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Escazú",
+		"_id": "2"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Desamparados",
+		"_id": "3"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Puriscal",
+		"_id": "4"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Tarrazú",
+		"_id": "5"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Aserrí"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Mora"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Goicoechea"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Santa Ana"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Alajuelita"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Vázquez de Coronado"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Acosta"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Tibás"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Moravia"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Montes de Oca"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Turrubares"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Dota"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Curridabat"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Pérez Zeledón"
+	},
+	{
+		"idProvincia": "0",
+		"name": "León Cortés Castro"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Alajuela"
+	},
+	{
+		"idProvincia": "1",
+		"name": "San Ramón"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Grecia"
+	},
+	{
+		"idProvincia": "1",
+		"name": "San Mateo"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Atenas"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Naranjo"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Palmares"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Poás"
+	},
+  {
+		"idProvincia": "1",
+		"name": "Orotina"
+	},
+  {
+		"idProvincia": "1",
+		"name": "San Carlos"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Zarcero"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Valverde Vega"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Upala"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Los Chiles"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Guatuso"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Cartago"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Paraíso"
+	},
+	{
+		"idProvincia": "2",
+		"name": "La Unión"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Jiménez"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Turrialba"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Alvarado"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Oreamuno"
+	},
+	{
+		"idProvincia": "2",
+		"name": "El Guarco"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Heredia"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Barva"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Santo Domingo"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Santa Bárbara"
+	},
+	{
+		"idProvincia": "3",
+		"name": "San Rafael"
+	},
+	{
+		"idProvincia": "3",
+		"name": "San Isidro"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Belén"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Flores"
+	},
+	{
+		"idProvincia": "3",
+		"name": "San Pablo"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Sarapiquí"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Liberia"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Nicoya"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Santa Cruz"
+	},
+  {
+		"idProvincia": "4",
+		"name": "Bagaces"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Carrillo"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Cañas"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Abangares"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Tilarán"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Nandayure"
+	},
+	{
+		"idProvincia": "4",
+		"name": "La Cruz"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Hojancha"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Puntarenas"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Esparza"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Buenos Aires"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Montes de Oro"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Osa"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Quepos"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Golfito"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Coto Brus"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Parrita"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Corredores"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Garabito"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Limón"
+	},
+  {
+		"idProvincia": "6",
+		"name": "Pococí"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Siquirres"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Talamanca"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Matina"
+	},
+  {
+		"idProvincia": "6",
+		"name": "Guácimo"
+	}
+]

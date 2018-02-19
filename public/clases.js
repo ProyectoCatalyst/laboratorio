@@ -1,5 +1,5 @@
 class Usuario {
-  constructor(pnombre, pprimerApellido, psegundoApellido, pcedula, pfecha, pgenero, pfoto, pubicacion, pprovincia, pcanton, pdistrito, pusuario, pcontrasenna) {
+  constructor(pnombre, pprimerApellido, psegundoApellido, pcedula, pfecha, pgenero, pfoto, pubicacion, pprovincia, pcanton, pdistrito, pusuario, pcorreo, pcontrasenna) {
     this.nombre = pnombre;
     this.primerApellido = pprimerApellido;
     this.segundoApellido = psegundoApellido;
@@ -11,6 +11,7 @@ class Usuario {
     this.canton = pcanton;
     this.distrito = pdistrito;
     this.usuario = pusuario;
+    this.correo = pcorreo;
     this.contrasenna = pcontrasenna;
   }
 
@@ -20,6 +21,10 @@ class Usuario {
 
   getUsuario() {
     return this.usuario;
+  }
+
+  getCorreo() {
+    return this.correo;
   }
 
   getContrasenna() {

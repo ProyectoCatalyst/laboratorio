@@ -2,7 +2,7 @@
 <section class="row">
   <div class="container">
     <div class="col-md-4">
-      <form ng-submit="vm.iniciarSesion(vm.usuario)">
+      <form ng-submit="vm.iniciarSesion(vm.usuario)" novalidate autocomplete="off">
         <div class="form-group">
           <label for="exampleInputEmail1">Correo electrónico</label>
           <input type="email" class="form-control" ng-model="vm.usuario.correo" id="exampleInputEmail1" aria-describedby="emailHelp">

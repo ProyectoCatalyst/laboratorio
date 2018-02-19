@@ -2,7 +2,7 @@
   'use strict';
   angular
     // Se inyecta el ui.router y el oclazyLoad
-    .module('appRoutes', ['ui.router', 'oc.lazyLoad'])
+    .module('appRoutes', ['ui.router', 'oc.lazyLoad', 'uiRouterTitle'])
     .config(routing);
   // Inyeccción de dependencia indirecta (tipo Angular)
   routing.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -13,7 +13,10 @@
     $stateProvider
       .state('landingPage', {
         url: '/',
-        templateUrl: './components/landingPage/landingPage.view.html'
+        templateUrl: './components/landingPage/landingPage.view.html',
+        data:{
+          pageTitle: 'Inicio | Laboratorio 1'
+        }
       })
 
       .state('login', {
@@ -23,6 +26,9 @@
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
             return $ocLazyLoad.load('./components/login/login.controller.js')
           }]
+        },
+        data:{
+          pageTitle: 'Inicio de sesión | Laboratorio 1'
         },
         controller: 'controladorInicioSesion',
         controllerAs: 'vm'
@@ -35,6 +41,9 @@
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
             return $ocLazyLoad.load('./components/users/registerUsers/registerUsers.controller.js')
           }]
+        },
+        data:{
+          pageTitle: 'Registro de usuarios | Laboratorio 1'
         },
         controller: 'controladorRegistrarUsuario',
         controllerAs: 'vm'

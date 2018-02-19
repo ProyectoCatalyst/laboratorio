@@ -1,31 +1,31 @@
 <div ng-include="'./components/includes/_header.html'"></div>
 <section class="row">
   <div class="container">
-    <form class="row" name="frmRegistroUsuarios" ng-submit="vm.registrarUsuario(vm.usuarioNuevo)">
+    <form class="row" name="frmRegistroUsuarios" ng-submit="vm.registrarUsuario(vm.usuarioNuevo)" novalidate autocomplete="off">
       <div class="col-md-4">
         <div class="form-group">
           <label for="txtNombre">Nombre</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.nombre" pattern="[a-zA-Z]+[-_]*[a-zA-Z]+"  id="txtNombre" required>
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.nombre" pattern="[a-zA-Z]+"  id="txtNombre" required>
         </div>
         <div class="form-group">
           <label for="txtPrimerApellido">Primer Apellido</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.primerApellido" pattern="[a-zA-Z]+[-_]*[a-zA-Z]+" id="txtPrimerApellido">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.primerApellido" pattern="[a-zA-Z]+" id="txtPrimerApellido" required>
         </div>
         <div class="form-group">
           <label for="txtSegundoApellido">Segundo Apellido</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.segundoApellido" pattern="[a-zA-Z]+[-_]*[a-zA-Z]+" id="txtSegundoApellido">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.segundoApellido" pattern="[a-zA-Z]+" id="txtSegundoApellido" required>
         </div>
         <div class="form-group">
           <label for="txtCedula">Cédula</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.cedula" pattern="[0-9]+" id="txtCedular">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.cedula" pattern="[0-9]+" id="txtCedular" required>
         </div>
         <div class="form-group">
           <label for="txtFecha">Fecha</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.fecha" id="txtFecha">
+          <input type="date" class="form-control" ng-model="vm.usuarioNuevo.fecha" id="txtFecha" required>
         </div>
         <div class="form-group">
             <label for="txtGenero">Género</label>
-          <select class="custom-select" ng-model="vm.usuarioNuevo.genero" placeholder="Seleccione una opción" id="txtGenero">
+          <select class="custom-select" ng-model="vm.usuarioNuevo.genero" id="txtGenero" required>
             <option value="1">Femenino</option>
             <option value="2">Masculino</option>
             <option value="3">Sexualmente diverso</option>
@@ -33,39 +33,45 @@
         </div>
         <div class="form-group">
           <label for="txtFoto">Foto</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.foto" id="txtFoto">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.foto" id="txtFoto" required>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="form-group">
           <label for="txtUbicacion">Ubicación</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.ubicacion" id="txtUbicacion">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.ubicacion" id="txtUbicacion" required>
         </div>
         <div class="form-group">
           <label for="txtProvincia">Provincia</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.provincia" id="txtProvincia">
+          <select id="txtProvincia" ng-model="vm.usuarioNuevo.provincia"class="custom-select" required>
+            <option value="{{provincia._id}}" ng-repeat="provincia in vm.provincias">{{provincia.name}}</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="txtCanton">Cantón</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.canton" id="txtCanton">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.canton" id="txtCanton" required>
         </div>
         <div class="form-group">
           <label for="txtDistrito">Distrito</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.distrito" id="txtDistrito">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.distrito" id="txtDistrito" required>
         </div>
         <div class="form-group">
           <label for="txtUsuario">Usuario</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.usuario" id="txtUsuario">
+          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.usuario" id="txtUsuario" required>
+        </div>
+        <div class="form-group">
+          <label for="txtEmail">Correo electrónico</label>
+          <input type="email" class="form-control" ng-model="vm.usuarioNuevo.correo" id="txtEmail" required>
         </div>
         <div class="form-group">
           <label for="txtContrasenna">Contraseña</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.contrasenna" id="txtContrasenna">
+          <input type="password" class="form-control" ng-model="vm.usuarioNuevo.contrasenna" id="txtContrasenna" required>
         </div>
       </div>
 
       <div class="col-md-12">
-          <button type="submit" class="btn btn-primary" ng-disabled="frmRegistroUsuarios.$error">Registrar Usuario</button>
+          <button type="submit" class="btn btn-primary" ng-disabled="frmRegistroUsuarios.$invalid">Registrar Usuario</button>
       </div>
       
     </form>
