@@ -10,12 +10,12 @@ servicioRetoquesAdm.$inject['$log', '$http'];
 
 function servicioRetoquesAdm($log, $http){
   let publicAPI = {
-    addRetoques: _addRetoque,
+    addRetoques: _addRetoques,
     getRetoques: _getRetoques
   }
   return publicAPI
 
-  function _addRetoque(pnuevoRetoque){
+  function _addRetoques(pnuevoRetoque){
     let listaRetoques = _getRetoques();
     listaRetoques.push('pnuevoRetoque');
     localStorage.setItem('retoquesLs', JSON.stringify(listaRetoques));
