@@ -1,8 +1,14 @@
 <div>
 
-  <form ng-submit="">
+  <form ng-submit="vm.registrarRetoques(vm.nuevoRetoque)">
 
+    <label>Nombre del servicio</label>
+    <input type="text"  ng-model="vm.nuevoRetoque.nombre">
+
+    <label>Precio del servicio</label>
+    <input type="number"  ng-model="vm.nuevoRetoque.precio">
     
+    <button type="submit">Registrar</button>
 
   </form>
 
