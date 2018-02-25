@@ -31,12 +31,14 @@ gulp.task('dependencies', () => {
 
   gulp.src([
     './node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
-    './node_modules/oclazyload/dist/ocLazyLoad.min.js'
+    './node_modules/oclazyload/dist/ocLazyLoad.min.js',
+    './node_modules/ui-router-page-title/page-title.min.js'
   ])
     .pipe(gulp.dest('./public/lib/angular/routing'))
   gulp.src([
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/bootstrap/dist/css/bootstrap.min.css',
+    './node_modules/bootstrap-social/bootstrap-social.css',
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/popper.js/dist/popper.min.js'
   ])
@@ -45,6 +47,16 @@ gulp.task('dependencies', () => {
     './node_modules/sweetalert/dist/sweetalert.min.js',
   ])
     .pipe(gulp.dest('./public/lib/sweetalert'));
+  
+  gulp.src([
+    './node_modules/cloudinary/**'
+  ])
+    .pipe(gulp.dest('./public/lib/cloudinary'));
+
+  gulp.src([
+    './node_modules/provinces/provinces.json'
+  ])
+    .pipe(gulp.dest('./public/lib'));
 });
 
 gulp.task('reload', () => {

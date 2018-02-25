@@ -7,31 +7,43 @@
   <meta name="author" content="Catalyst">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>laboratorio</title>
+  <title page-title></title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="./lib/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="./lib/bootstrap/bootstrap-social.css">
   <!-- Estilo Generales -->
   <link rel="stylesheet" href="./generalStyles.css">
 </head>
 
 <body>
 
-  <div ui-view></div>
+  <div ui-view>
+    
+  </div>
 
   <!-- Dependencias -->
   <script src="./lib/bootstrap/jquery.min.js"></script>
   <script src="./lib/bootstrap/popper.min.js"></script>
   <script src="./lib/bootstrap/bootstrap.min.js"></script>
+  <script src="./lib/sweetalert/sweetalert.min.js"></script>
   <!-- Scrip de Angular -->
   <script src="./lib/angular/angular.min.js"></script>
     <!-- Dependencias de Agular -->
     <script src="./lib/angular/routing/angular-ui-router.min.js"></script>
     <script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
+    <script src="./lib/angular/routing/page-title.min.js"></script>
   <!-- Script de la aplicación -->
   <script src="./clases.js"></script>
   <script src="./app.js"></script>
   <script src="./route.js"></script>
+<<<<<<< HEAD
   <script src="./components/services/retoquesAdm.services.js"></script>
+=======
+  <!-- Servicios de la aplicacion -->
+  <script src="./components/services/user.service.js"></script>
+  <script src="./components/services/atenticacion/auth.service.js"></script>
+  <script src="./components/services/atenticacion/session.service.js"></script>
+>>>>>>> master
 </body>
 
 </html>

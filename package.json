@@ -34,9 +34,14 @@
     "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.9",
     "bootstrap": "^4.0.0",
+    "bootstrap-social": "^5.1.1",
+    "cloudinary": "^1.10.0",
+    "facebook-login": "^1.4.0",
     "jquery": "^3.3.1",
     "oclazyload": "^1.1.0",
     "popper.js": "^1.12.9",
-    "sweetalert": "^2.1.0"
+    "provinces": "^1.11.0",
+    "sweetalert": "^2.1.0",
+    "ui-router-page-title": "^1.0.4"
   }
 }

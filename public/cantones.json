@@ -1,0 +1,407 @@
+[
+	{
+		"idProvincia": "0",
+		"name": "San José",
+		"_id": "1"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Escazú",
+		"_id": "2"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Desamparados",
+		"_id": "3"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Puriscal",
+		"_id": "4"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Tarrazú",
+		"_id": "5"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Aserrí",
+		"_id": "6"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Mora",
+		"_id": "5"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Goicoechea",
+		"_id": "6"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Santa Ana",
+		"_id": "7"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Alajuelita",
+		"_id": "8"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Vázquez de Coronado",
+		"_id": "9"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Acosta",
+		"_id": "10"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Tibás",
+		"_id": "11"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Moravia",
+		"_id": "12"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Montes de Oca",
+		"_id": "13"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Turrubares",
+		"_id": "14"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Dota",
+		"_id": "15"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Curridabat",
+		"_id": "16"
+	},
+	{
+		"idProvincia": "0",
+		"name": "Pérez Zeledón",
+		"_id": "17"
+	},
+	{
+		"idProvincia": "0",
+		"name": "León Cortés Castro",
+		"_id": "18"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Alajuela",
+		"_id": "1"
+	},
+	{
+		"idProvincia": "1",
+		"name": "San Ramón",
+		"_id": "1"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Grecia",
+		"_id": "2"
+	},
+	{
+		"idProvincia": "1",
+		"name": "San Mateo",
+		"_id": "3"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Atenas",
+		"_id": "4"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Naranjo",
+		"_id": "5"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Palmares",
+		"_id": "6"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Poás",
+		"_id": "7"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Orotina",
+		"_id": "8"
+	},
+	{
+		"idProvincia": "1",
+		"name": "San Carlos",
+		"_id": "9"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Zarcero",
+		"_id": "10"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Valverde Vega",
+		"_id": "11"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Upala",
+		"_id": "12"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Los Chiles",
+		"_id": "13"
+	},
+	{
+		"idProvincia": "1",
+		"name": "Guatuso",
+		"_id": "14"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Cartago",
+		"_id": "1"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Paraíso",
+		"_id": "2"
+	},
+	{
+		"idProvincia": "2",
+		"name": "La Unión",
+		"_id": "3"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Jiménez",
+		"_id": "4"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Turrialba",
+		"_id": "5"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Alvarado",
+		"_id": "6"
+	},
+	{
+		"idProvincia": "2",
+		"name": "Oreamuno",
+		"_id": "7"
+	},
+	{
+		"idProvincia": "2",
+		"name": "El Guarco",
+		"_id": "8"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Heredia",
+		"_id": "9"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Barva",
+		"_id": "10"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Santo Domingo",
+		"_id": "11"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Santa Bárbara",
+		"_id": "12"
+	},
+	{
+		"idProvincia": "3",
+		"name": "San Rafael",
+		"_id": "13"
+	},
+	{
+		"idProvincia": "3",
+		"name": "San Isidro",
+		"_id": "14"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Belén",
+		"_id": "15"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Flores",
+		"_id": "16"
+	},
+	{
+		"idProvincia": "3",
+		"name": "San Pablo",
+		"_id": "17"
+	},
+	{
+		"idProvincia": "3",
+		"name": "Sarapiquí",
+		"_id": "18"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Liberia",
+		"_id": "1"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Nicoya",
+		"_id": "2"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Santa Cruz",
+		"_id": "3"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Bagaces",
+		"_id": "4"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Carrillo",
+		"_id": "5"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Cañas",
+		"_id": "6"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Abangares",
+		"_id": "7"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Tilarán",
+		"_id": "8"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Nandayure",
+		"_id": "9"
+	},
+	{
+		"idProvincia": "4",
+		"name": "La Cruz",
+		"_id": "10"
+	},
+	{
+		"idProvincia": "4",
+		"name": "Hojancha",
+		"_id": "11"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Puntarenas",
+		"_id": "1"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Esparza",
+		"_id": "2"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Buenos Aires",
+		"_id": "3"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Montes de Oro",
+		"_id": "4"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Osa",
+		"_id": "5"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Quepos",
+		"_id": "6"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Golfito",
+		"_id": "7"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Coto Brus",
+		"_id": "8"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Parrita",
+		"_id": "9"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Corredores",
+		"_id": "10"
+	},
+	{
+		"idProvincia": "5",
+		"name": "Garabito",
+		"_id": "11"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Limón",
+		"_id": "1"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Pococí",
+		"_id": "2"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Siquirres",
+		"_id": "3"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Talamanca",
+		"_id": "4"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Matina",
+		"_id": "5"
+	},
+	{
+		"idProvincia": "6",
+		"name": "Guácimo",
+		"_id": "6"
+	}
+]
