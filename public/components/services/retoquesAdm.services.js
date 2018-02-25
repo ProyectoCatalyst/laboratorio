@@ -30,14 +30,14 @@ function servicioRetoquesAdm($log, $http){
     let listaRetoquesLocal = JSON.parse(localStorage.getItem('retoquesLS'));
 
     if(listaRetoquesLocal == null){
-      listaRetoques = []; // quemar retoques
+      listaRetoques = controladorAdmRetoques.retoquesEstablecidos(); //se llama la funcion para quemar retoques
     }else{
 
       listaRetoquesLocal.forEach(obj => {
         let ObjRetoque = new Retoque (obj.nombre, obj.precio);
 
         listaRetoques.push(ObjRetoque);
-      })
+      });
 
     }
 

@@ -5,7 +5,7 @@
   .module('laboratorio')
   .controller('controladorAdmRetoques', controladorAdmRetoques);
 
-  controladorAdmRetoques.$inject  = ['servicioRetoquesAdm']; //nombre del servicio
+  controladorAdmRetoques.$inject = ['servicioRetoquesAdm']; //nombre del servicio
 
   function controladorAdmRetoques(servicioRetoquesAdm){
     let vm = this;
@@ -24,6 +24,16 @@
       // listarRetoques();
     }
 
+
+    vm.retoquesEstablecidos = () => {
+      let retoquesEstablecidos = new Retoque ([
+        'Sesión de maquillaje', 150,
+        'Sesión de peluqueria', 100,
+        'Sesión de costura', 250
+      ]);
+
+      return retoquesEstablecidos;
+    }
     // function listarRetoques(){
     //   vm.listaRetoques = servicioRetoquesAdm.getRetoques();
     // }
