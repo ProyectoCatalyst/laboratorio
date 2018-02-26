@@ -35,7 +35,7 @@
       })
 
       .state('register', {
-        url: '/register',
+        url: '/registerUsers',
         templateUrl: './components/users/registerUsers/registerUsers.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
@@ -48,6 +48,7 @@
         controller: 'controladorRegistrarUsuario',
         controllerAs: 'vm'
       })
+<<<<<<< HEAD
       
       
       .state('registroEntierros', {
@@ -62,6 +63,39 @@
           pageTitle: 'Registro Entierros'
         },
         controller: 'controladorRegistroEntierro',
+=======
+
+      .state('listUsers', {
+        url: '/listUsers',
+        templateUrl: './components/users/listUsers/listUsers.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/users/listUsers/listUsers.controller.js')
+          }]
+        },
+        data:{
+          pageTitle: 'Listar usuarios | Laboratorio 1'
+        },
+        controller: 'controladorListarUsuario',
+        controllerAs: 'vm'
+      })
+      
+      .state('registerUndead', {
+        url: '/registerUndead',
+        templateUrl: './components/undead/registerUndead/registerUndead.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/undead/registerUndead/registerUndead.controller.js')
+          }]
+        },
+        data:{
+          pageTitle: 'Registro de difuntos | Laboratorio 1'
+        },
+        params: {
+          objUsuario: ''
+        },
+        controller: 'controladorRegistrarUndead',
+>>>>>>> master
         controllerAs: 'vm'
       });
 
