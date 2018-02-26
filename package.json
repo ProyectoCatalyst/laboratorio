@@ -33,6 +33,7 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.9",
+    "angular-facebook-api-factory": "^0.5.0",
     "bootstrap": "^4.0.0",
     "bootstrap-social": "^5.1.1",
     "cloudinary": "^1.10.0",

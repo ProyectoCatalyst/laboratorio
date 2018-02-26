@@ -27,7 +27,7 @@ function calcularCostoFinal(phoras,pcostoAnimador,ptipoPago){
   let montoTotal=0, Desc=0,tarifaBasica=65;
   let horas = phoras, costoAnimador=pcostoAnimador,tipoPago= ptipoPago;
 
-  if(tipoPago=='efectivo')
+  if(tipoPago =='efectivo')
   {
     Desc=(((tarifaBasica + costoAnimador)*horas)-(6/100))
   }

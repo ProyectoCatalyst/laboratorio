@@ -58,4 +58,3 @@ class Animador{
   return this.costoAnimador;
   }
 }
-

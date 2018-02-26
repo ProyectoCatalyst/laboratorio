@@ -1,0 +1,33 @@
+<div class="col-4">
+  <form ng-submit="vm.registrarUndead(vm.undeadNuevo)">
+      <div class="form-group">
+        <label for="txtApodo">Apodo</label>
+        <input type="text" class="form-control" ng-model="vm.undeadNuevo.apodo" id="txtApodo" required>
+      </div>
+        
+      <div class="form-group">
+        <label for="txtGenero">Género</label>
+        <select class="custom-select" ng-model="vm.undeadNuevo.genero" id="txtGenero" required>
+          <option value="1">Femenino</option>
+          <option value="2">Masculino</option>
+          <option value="3">Sexualmente diverso</option>
+        </select>
+      </div>
+        
+      <div class="form-group">
+        <label for="txtEdad">Edad</label>
+        <input type="text" class="form-control" ng-model="vm.undeadNuevo.edad" id="txtEdad" required>
+      </div>
+        
+      <div class="form-group">
+        <label for="txtTamannio">Tamaño</label>
+        <input type="text" class="form-control" ng-model="vm.undeadNuevo.tamannio" id="txtTamannio" required>
+      </div>
+        
+      <button type="submit" class="btn btn-primary">Registrar Difunto</button>
+  </form>
+</div>
+
+
+
+
