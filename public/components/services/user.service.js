@@ -6,6 +6,8 @@
 
   servicioUsuarios.$inject = ['$q', '$log', '$http']; // dependencias de angular van de primero
 
+  servicioUsuarios.$inject = ['$q', '$log', '$http']; 
+  
   function servicioUsuarios($q, $log, $http) {
 
     const asyncLocalStorage = {
@@ -16,12 +18,14 @@
               return response
           });
       }
-    };
+    }
 
     let publicAPI = {
       agregarUsuario: _agregarUsuario,
-      retornarUsuario: _retornarUsuario
-    }
+      retornarUsuario: _retornarUsuario,
+      agregarDifunto: _agregarDifunto,
+      retornarDifunto: _retornarDifunto
+    };
     return publicAPI;
 
     function _agregarUsuario(pusuario) {
@@ -38,8 +42,9 @@
       return registroExitoso;
     }
 
-    function _compararUsuario() {
-
+    function _retornarDifunto(pusuario) {
+        
+      
     }
 
     function _retornarUsuario() {
@@ -62,6 +67,27 @@
       }
       return todosLosUsuarios;
     }
+
+    function _agregarDifunto(aDatos){
+      let todosLosUsuarios = _retornarUsuario();
+      let registroExitoso = false;
+
+      for(let i = 0; i < todosLosUsuarios.length; i++){
+        if(aDatos[0].getCedula() === todosLosUsuarios[i].getCedula()){
+          todosLosUsuarios[i].setDifunto(aDatos[1]);
+          registroExitoso = true;
+        }
+      }
+
+      actualizarLista(todosLosUsuarios);
+
+      return registroExitoso;
+      
+    }
+  }
+
+  function actualizarLista(listaActualizada){
+    localStorage.setItem('listaUsuariosLS', JSON.stringify(listaActualizada));
   }
   
 })();

@@ -35,7 +35,7 @@
       })
 
       .state('register', {
-        url: '/register',
+        url: '/registerUsers',
         templateUrl: './components/users/registerUsers/registerUsers.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
@@ -49,33 +49,36 @@
         controllerAs: 'vm'
       })
 
-      .state('retouchadd', {
-        url: '/retouchadd',
-        templateUrl: './components/retouch/retouchadd/retouchadd.view.html',
+      .state('listUsers', {
+        url: '/listUsers',
+        templateUrl: './components/users/listUsers/listUsers.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/retouch/retouchadd/retouchadd.controller.js')
+            return $ocLazyLoad.load('./components/users/listUsers/listUsers.controller.js')
           }]
         },
-        data: {
-          pageTitle: 'Registro de retoques | Laboratorio 1'
+        data:{
+          pageTitle: 'Listar usuarios | Laboratorio 1'
         },
-        controller: 'controladorAgregarRetoques',
+        controller: 'controladorListarUsuario',
         controllerAs: 'vm'
       })
-
-      .state('retouchmanage', {
-        url: '/retouchmanage',
-        templateUrl: './components/retouch/retouchmanage/retouchmanage.view.html',
+      
+      .state('registerUndead', {
+        url: '/registerUndead',
+        templateUrl: './components/undead/registerUndead/registerUndead.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/retouch/retouchmanage/retouchmanage.controller.js')
+            return $ocLazyLoad.load('./components/undead/registerUndead/registerUndead.controller.js')
           }]
         },
-        data: {
-          pageTitle: 'Manejar Retoques | Laboratorio 1'
+        data:{
+          pageTitle: 'Registro de difuntos | Laboratorio 1'
         },
-        controller: 'controladorManejarRetoques',
+        params: {
+          objUsuario: ''
+        },
+        controller: 'controladorRegistrarUndead',
         controllerAs: 'vm'
       });
 

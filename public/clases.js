@@ -13,6 +13,7 @@ class Usuario {
     this.usuario = pusuario;
     this.correo = pcorreo;
     this.contrasenna = pcontrasenna;
+    this.difuntos = [];
   }
 
   getNombreCompleto() {
@@ -36,5 +37,21 @@ class Retoque { // crear clase del retoque al cual se le dara mantenimiento.
   constructor(pnombre, pprecio) {
     this.nombre = pnombre,
     this.precio = pprecio
+
+  getCedula() {
+    return this.cedula;
+  }
+
+  setDifunto(pnuevoDifunto) {
+    this.difuntos.push(pnuevoDifunto);
+  }
+}
+
+class Difunto {
+  constructor(papodo, pedad, pgenero, ptamanno) {
+    this.apodo = papodo;
+    this.edad = pedad;
+    this.genero = pgenero;
+    this.tamanno = ptamanno;
   }
 }
