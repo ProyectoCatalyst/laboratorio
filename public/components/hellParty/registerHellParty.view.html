@@ -1,0 +1,29 @@
+<div ng-include="'./components/includes/_header.html'"></div>
+<section class="row">
+  <div class="row">
+    <div class="contaier">
+      <form class="row" name="frmRegistrarFiesta" ng-submit="vm.registrarFista(vm.fiestaNueva" novalidate autocomplete="off">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="dateFiesta">Fecha</label>
+            <input type="date" class="form-control" ng-model="vm.fiestaNueva.fecha" required>  
+          </div>
+          <div class="form-group">
+            <label for="horasFiesta">Horas</label>
+            <input type="num"class="form-control" ng-model="vm.fiestaNueva.horas" required>  
+          </div>
+          <label for="tarifa">Tarifa básica: $65</label>
+        </div>
+      </div>
+     <div class="metodoPagoFiesta">
+       <label for="lbPago">Seleccione la forma de pago: </label>
+       <select name="" id="pagoFiesta">
+         <option value="tarjeta">Tarjeta</option>
+         <option  value="efectivo">efectivo</option>
+       </select>
+     </div>
+     <div class="col-md-12">
+       <button type="submit" class="btn  btn-primary" ng-disabled="frmRegistroFiesta. $invalid">Solicitar Fiesta</button>
+   </div>
+  </form>
+  </div>
