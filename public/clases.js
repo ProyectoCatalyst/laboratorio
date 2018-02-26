@@ -31,3 +31,10 @@ class Usuario {
     return this.contrasenna;
   }
 }
+
+class Retoque { // crear clase del retoque al cual se le dara mantenimiento.
+  constructor(pnombre, pprecio) {
+    this.nombre = pnombre,
+    this.precio = pprecio
+  }
+}

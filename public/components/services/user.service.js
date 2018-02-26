@@ -4,7 +4,7 @@
     .module('laboratorio')
     .service('servicioUsuarios', servicioUsuarios);
 
-  servicioUsuarios.$inject = ['$q', '$log', '$http'];
+  servicioUsuarios.$inject = ['$q', '$log', '$http']; // dependencias de angular van de primero
 
   function servicioUsuarios($q, $log, $http) {
 

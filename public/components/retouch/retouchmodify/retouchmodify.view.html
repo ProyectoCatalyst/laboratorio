@@ -1,0 +1,21 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Modificar</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="retoques in vm.listaRetoques">
+        <td>{{retoques.nombre}}</td>
+        <td>{{retoques.precio}}</td>
+        <td>
+          <button>Modificar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

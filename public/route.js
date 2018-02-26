@@ -8,33 +8,13 @@
   routing.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   // Forma del archivo de identificarse a sí mismo (tercer tipo de inyection por parametro)
-  function routing($stateProvider, $urlRouterProvider, $ocLazyLoad) {
+  function routing($stateProvider, $urlRouterProvider, $ocLazyLoad) { // no importa las rutas que hayan, solo ocupo la funcionalidad
 
     $stateProvider
       .state('landingPage', {
         url: '/',
-<<<<<<< HEAD
-        templateUrl: './components/landingPage/landingPage.view.html'
-      })
-
-      // generar vista de retoques de administrador, donde se dara mantenimiento a la parte de agregar, remover o modificar servicios. Calidad 1 | Isaac.
-        .state('retoques', {
-          url: '/retoques',
-          templateUrl: './components/retoques/retoquesAdm.view.html',
-          data:{
-            pageTitle: 'Laboratorio | Retoques'
-          },
-          resolve:{
-            load: ['$ocLazyLoad', ($ocLazyLoad) => {
-              return $ocLazyLoad.load('./components/retoques/retoquesAdm.controller.js')
-            }]
-          },
-          controller: 'controladorAdmRetoques',
-          controllerAs: 'vm'
-        });
-=======
         templateUrl: './components/landingPage/landingPage.view.html',
-        data:{
+        data: {
           pageTitle: 'Inicio | Laboratorio 1'
         }
       })
@@ -47,7 +27,7 @@
             return $ocLazyLoad.load('./components/login/login.controller.js')
           }]
         },
-        data:{
+        data: {
           pageTitle: 'Inicio de sesión | Laboratorio 1'
         },
         controller: 'controladorInicioSesion',
@@ -62,13 +42,42 @@
             return $ocLazyLoad.load('./components/users/registerUsers/registerUsers.controller.js')
           }]
         },
-        data:{
+        data: {
           pageTitle: 'Registro de usuarios | Laboratorio 1'
         },
         controller: 'controladorRegistrarUsuario',
         controllerAs: 'vm'
+      })
+
+      .state('retouchadd', {
+        url: '/retouchadd',
+        templateUrl: './components/retouch/retouchadd/retouchadd.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/retouch/retouchadd/retouchadd.controller.js')
+          }]
+        },
+        data: {
+          pageTitle: 'Registro de retoques | Laboratorio 1'
+        },
+        controller: 'controladorAgregarRetoques',
+        controllerAs: 'vm'
+      })
+
+      .state('retouchmodify', {
+        url: '/retouchmodify',
+        templateUrl: './components/retouch/retouchmodify/retouchmodify.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/retouch/retouchmodify/retouchmodify.controller.js')
+          }]
+        },
+        data: {
+          pageTitle: 'Modificar Retoques | Laboratorio 1'
+        },
+        controller: 'controladorModificarRetoques',
+        controllerAs: 'vm'
       });
->>>>>>> master
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
     $urlRouterProvider.otherwise('/');
