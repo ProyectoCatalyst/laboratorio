@@ -64,18 +64,18 @@
         controllerAs: 'vm'
       })
 
-      .state('retouchmodify', {
-        url: '/retouchmodify',
-        templateUrl: './components/retouch/retouchmodify/retouchmodify.view.html',
+      .state('retouchmanage', {
+        url: '/retouchmanage',
+        templateUrl: './components/retouch/retouchmanage/retouchmanage.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/retouch/retouchmodify/retouchmodify.controller.js')
+            return $ocLazyLoad.load('./components/retouch/retouchmanage/retouchmanage.controller.js')
           }]
         },
         data: {
-          pageTitle: 'Modificar Retoques | Laboratorio 1'
+          pageTitle: 'Manejar Retoques | Laboratorio 1'
         },
-        controller: 'controladorModificarRetoques',
+        controller: 'controladorManejarRetoques',
         controllerAs: 'vm'
       });
 

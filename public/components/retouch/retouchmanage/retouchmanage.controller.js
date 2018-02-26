@@ -2,10 +2,10 @@
   'use strict';
 
   angular.module('laboratorio')
-  .controller('controladorModificarRetoques', controladorModificarRetoques)
+  .controller('controladorManejarRetoques', controladorManejarRetoques)
   
-  controladorModificarRetoques.$inject = ['servicioRetoques'];
-  function controladorModificarRetoques(servicioRetoques){
+  controladorManejarRetoques.$inject = ['servicioRetoques'];
+  function controladorManejarRetoques(servicioRetoques){
     let vm = this;
 
     vm.retoques = {}
