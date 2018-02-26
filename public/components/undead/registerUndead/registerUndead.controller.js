@@ -4,9 +4,9 @@
     .module('laboratorio')
     .controller('controladorRegistrarUndead', controladorRegistrarUndead);
 
-  controladorRegistrarUndead.$inject = ['servicioUsuarios', '$stateParams'];
+  controladorRegistrarUndead.$inject = ['servicioUsuarios', '$stateParams', '$state'];
 
-  function controladorRegistrarUndead(servicioUsuarios, $stateParams) {
+  function controladorRegistrarUndead(servicioUsuarios, $stateParams, $state) {
     let vm = this;
 
     let objSinFormatoUsuario = JSON.parse($stateParams.objUsuario);
@@ -33,6 +33,8 @@
           text: "Difunto registrado correctamente registrado en el registro de difuntos :)",
           icon: "success"
         });
+
+        $state.go('listUsers')
       }
 
     }
