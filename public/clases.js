@@ -15,6 +15,7 @@ class Usuario {
     this.contrasenna = pcontrasenna;
   }
 
+
   getNombreCompleto() {
     return `${this.nombre} ${this.primerApellido} ${this.segundoApellido}`;
   }
@@ -30,4 +31,16 @@ class Usuario {
   getContrasenna() {
     return this.contrasenna;
   }
+}
+
+class Entierro {
+  constructor (phoraInicio, phoraFinal, pfecha, plugar, pprioridad){
+    this.horaInicio = phoraInicio;
+    this.horaFinal = phoraFinal;
+    this.fecha = pfecha;
+    this.lugar = plugar; 
+    this.prioridad = pprioridad;
+  }
+
+  
 }

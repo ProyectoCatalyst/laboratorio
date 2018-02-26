@@ -21,7 +21,7 @@
     let publicAPI = {
       agregarUsuario: _agregarUsuario,
       retornarUsuario: _retornarUsuario
-    }
+    };
     return publicAPI;
 
     function _agregarUsuario(pusuario) {

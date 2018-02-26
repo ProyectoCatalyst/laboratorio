@@ -47,6 +47,22 @@
         },
         controller: 'controladorRegistrarUsuario',
         controllerAs: 'vm'
+      })
+      
+      
+      .state('registroEntierros', {
+        url: '/registroEntierro',
+        templateUrl: './components/entierros/registroEntierro/registroEntierro.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/entierros/registroEntierro/registroEntierro.controller.js')
+          }]
+        },
+        data:{
+          pageTitle: 'Registro Entierros'
+        },
+        controller: 'controladorRegistroEntierro',
+        controllerAs: 'vm'
       });
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
