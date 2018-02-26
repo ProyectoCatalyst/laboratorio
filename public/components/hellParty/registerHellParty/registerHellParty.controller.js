@@ -2,11 +2,12 @@
   'use strict';
   angular
     .module('laboratorio')
-    .controller('controladorRegistrarFiesta', controladorRegistrarFiesta);
+    .controller('controladorRegisterHellParty', controladorRegisterHellParty);
+    //controladorRegistrarFiesta);
 
-  controladorRegistrarFiesta.$inject = [ 'servicioFiesta'];
+    controladorRegisterHellParty.$inject = [ 'servicioFiesta'];
 
-  function controladorRegistrarFiesta(servicioFiesta) {
+  function controladorRegisterHellParty(servicioFiesta) {
     let vm = this;
 
     vm.fiestaNueva = {};
