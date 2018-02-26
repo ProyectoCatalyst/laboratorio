@@ -31,3 +31,31 @@ class Usuario {
     return this.contrasenna;
   }
 }
+
+class Fiesta{
+  constructor(pfecha,phoras,ptipoPago){
+    this.fecha = pfecha;
+    this.horas = phoras;
+    this.tipoPago = ptipoPago;
+    this.costoFinal = '';
+  }
+
+  obtenerfecha(){
+    return `${this.fecha.getYear()} ${this.fecha.getMonth()} ${this.fecha.getDay()}`
+  }
+  getHorasFiesta(){
+    return this.horas;
+  }
+}
+
+class Animador{
+  constructor(pidAnimador,pnombreAnimador,pcostoAnimador){
+    this.id=pidAnimador;
+    this.nombre=pnombreAnimador;
+    this.costo=pcostoAnimador;
+  }
+  getCostoAnimador(){
+  return this.costoAnimador;
+  }
+}
+
