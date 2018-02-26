@@ -2,11 +2,11 @@
   'use strict';
   angular
     .module('laboratorio')
-    .service('servicioUsuarios', servicioUsuarios);
+    .service('servicioFiesta', servicioFiestas);
 
-  servicioUsuarios.$inject = ['$q', '$log', '$http']; 
+  servicioFiestas.$inject = ['$q', '$log', '$http']; 
 
-    function _agregarUsuario(pusuario) {
+    function _agregarFiesta(pfiesta) {
 
       let todosLosUsuarios = _retornarUsuario();
       let registroExitoso = true;

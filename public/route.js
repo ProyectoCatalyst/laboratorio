@@ -80,6 +80,23 @@
         },
         controller: 'controladorRegistrarUndead',
         controllerAs: 'vm'
+      })
+      .state('registerHellParty', {
+        url: '/registerHellParty',
+        templateUrl: './components/hellParty/registerHellParty/registerHellParty.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/hellParty/registerHellParty/registerHellParty.controller.js')
+          }]
+        },
+        data:{
+          pageTitle: 'Registro de Fiestas en el Infierno | Laboratorio 1'
+        },
+        params: {
+          objFiesta: ''
+        },
+        controller: 'controladorRegisterHellParty',
+        controllerAs: 'vm'
       });
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
