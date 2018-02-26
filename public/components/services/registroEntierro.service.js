@@ -48,11 +48,12 @@ import { get } from "https";
 
       } else {
         listaEntierros.forEach(obj => {
-          let entierroTemp = new Entierro (obj.
-          )
+          let EntierroTemp = new Entierro (obj.horaInicio, obj.horaFinal, obj.fecha, obj.lugar, obj. prioridad);
+
+          todosEntierros.push(objEntierroTemp);
         });
-        
       }
+      return todosEntierros;
     }
    }
 })()
