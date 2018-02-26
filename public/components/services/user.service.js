@@ -85,8 +85,7 @@
   }
 
   function actualizarLista(listaActualizada){
-    asyncLocalStorage.setItem('listaUsuariosLS', listaActualizada).then((result) => {
-    });
+    localStorage.setItem('listaUsuariosLS', JSON.stringify(listaActualizada));
   }
   
 })();
