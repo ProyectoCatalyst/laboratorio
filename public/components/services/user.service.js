@@ -4,8 +4,8 @@
     .module('laboratorio')
     .service('servicioUsuarios', servicioUsuarios);
 
-  servicioUsuarios.$inject = ['$q', '$log', '$http'];
-
+  servicioUsuarios.$inject = ['$q', '$log', '$http']; 
+  
   function servicioUsuarios($q, $log, $http) {
 
     const asyncLocalStorage = {
@@ -16,12 +16,14 @@
               return response
           });
       }
-    };
+    }
 
     let publicAPI = {
       agregarUsuario: _agregarUsuario,
-      retornarUsuario: _retornarUsuario
-    }
+      retornarUsuario: _retornarUsuario,
+      agregarDifunto: _agregarDifunto,
+      retornarDifunto: _retornarDifunto
+    };
     return publicAPI;
 
     function _agregarUsuario(pusuario) {
@@ -61,6 +63,14 @@
         });
       }
       return todosLosUsuarios;
+    }
+
+    function _agregarDifunto(pnuevoDifunto){
+      let obtenerUsuarios = _retornarUsuario();
+      let registroExitoso = true;
+
+      
+
     }
   }
   

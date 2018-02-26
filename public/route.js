@@ -47,6 +47,21 @@
         },
         controller: 'controladorRegistrarUsuario',
         controllerAs: 'vm'
+      })
+      
+      .state('registerUndead', {
+        url: '/registerUndead',
+        templateUrl: './components/undead/registerUndead/registerUndead.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/undead/registerUndead/registerUndead.controller.js')
+          }]
+        },
+        data:{
+          pageTitle: 'Registro de difuntos | Laboratorio 1'
+        },
+        controller: 'controladorRegistrarUndead',
+        controllerAs: 'vm'
       });
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
