@@ -40,8 +40,9 @@
       return registroExitoso;
     }
 
-    function _compararUsuario() {
-
+    function _retornarDifunto(pusuario) {
+        
+      
     }
 
     function _retornarUsuario() {
@@ -65,13 +66,27 @@
       return todosLosUsuarios;
     }
 
-    function _agregarDifunto(pnuevoDifunto){
-      let obtenerUsuarios = _retornarUsuario();
-      let registroExitoso = true;
+    function _agregarDifunto(aDatos){
+      let todosLosUsuarios = _retornarUsuario();
+      let registroExitoso = false;
 
+      for(let i = 0; i < todosLosUsuarios.length; i++){
+        if(aDatos[0].getCedula() === todosLosUsuarios[i].getCedula()){
+          todosLosUsuarios[i].setDifunto(aDatos[1]);
+          registroExitoso = true;
+        }
+      }
+
+      actualizarLista(todosLosUsuarios);
+
+      return registroExitoso;
       
-
     }
+  }
+
+  function actualizarLista(listaActualizada){
+    asyncLocalStorage.setItem('listaUsuariosLS', listaActualizada).then((result) => {
+    });
   }
   
 })();

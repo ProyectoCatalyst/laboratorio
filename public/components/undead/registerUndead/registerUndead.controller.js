@@ -13,7 +13,7 @@
 
     vm.registrarUndead = (pUndeadNuevo) => {
 
-      let objNuevoUndead = new Undead(pUndeadNuevo.apodo, pUndeadNuevo.genero, pUndeadNuevo.edad, pUndeadNuevo.edad);
+      let objNuevoUndead = new Difunto (pUndeadNuevo.apodo, pUndeadNuevo.genero, pUndeadNuevo.edad, pUndeadNuevo.tamanno);
 
       let registro = servicioUsuarios.agregarDifunto(objNuevoUsuario);
 
