@@ -10,7 +10,8 @@
     
     let publicAPI = {
       addRetoques: _addRetoques,
-      getRetoques: _getRetoques
+      getRetoques: _getRetoques,
+      modifyRetoques: _modifyRetoques
     }
     return publicAPI;
 
@@ -39,5 +40,27 @@
 
       return listaRetoques
     }
+
+    function _modifyRetoques(paDatos){
+      let listaRetoquesOrginal = _getRetoques();
+
+      for(var i=0; i<listaRetoquesOrginal.length; i++){
+        if(listaRetoquesOrginal[i].nombre == paDatos[0].nombre){
+
+          listaRetoquesOrginal[i] = paDatos[1];
+          
+        }
+      }
+
+
+      console.log(listaRetoquesOrginal);
+
+      actualizarLista(listaRetoquesOrginal);
+    }
+
+    function actualizarLista(plistaRetoquesOrginal){
+      localStorage.setItem('retoquesLS', JSON.stringify(plistaRetoquesOrginal));
+    }
+
   }
 })();

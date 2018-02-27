@@ -16,14 +16,23 @@
 
     vm.retoqueoriginal = objRetoque; // asignar el objeto a la lista la cual se va  a llamar desde la vista para mostrar el objeto original antes de moficarlo
 
+    vm.retoqueModificado = {};
+
     vm.modificarRetoque = (pretoqueModificado) => {
-      let objRetoque = new Retoque (pretoqueModificado.nombre, pretoqueModificado.precio);
+      let objNuevoRetoque = new Retoque (pretoqueModificado.nombre, pretoqueModificado.precio);
 
-      console.log(vm.retoqueoriginal);
-      console.log(objRetoque); // cva a mostrar el nombre modificado como indefinido ya que no logra pasar los datos
+      // console.log(vm.retoqueoriginal);
+      // console.log(objNuevoRetoque); // va a mostrar el objeto modificado
 
+      let aDatos = [objRetoque, objNuevoRetoque];
 
+      // console.log(aDatos); aDatos contiene el objeto que estoy modificando junto con los datos que voy a reemplazar 
+
+      servicioRetoques.modifyRetoques(aDatos);
+      vm.retoqueModificado = null
+      $state.go('retouchmanage');    
     }
+
 
   }
 })();
