@@ -4,8 +4,8 @@
   angular.module('laboratorio')
   .controller('controladorManejarRetoques', controladorManejarRetoques)
   
-  controladorManejarRetoques.$inject = ['servicioRetoques'];
-  function controladorManejarRetoques(servicioRetoques){
+  controladorManejarRetoques.$inject = ['$stateParams', '$state', 'servicioRetoques'];
+  function controladorManejarRetoques($stateParams, $state, servicioRetoques){
     let vm = this;
 
     vm.retoques = {}
@@ -17,6 +17,13 @@
     function listarRetoques(){
       vm.listaRetoques = servicioRetoques.getRetoques();
     }
+
+    vm.modificarRetoque = (pretoques) => {
+      // console.log (pretoques);
+      $state.go('retouchmodify', { objRetoqueTemp : JSON.stringify(pretoques)});
+    }
+
+    
 
   }
 })();

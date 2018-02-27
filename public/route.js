@@ -35,7 +35,7 @@
       })
 
       .state('register', {
-        url: '/registerUsers',
+        url: '/register',
         templateUrl: './components/users/registerUsers/registerUsers.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
@@ -49,36 +49,51 @@
         controllerAs: 'vm'
       })
 
-      .state('listUsers', {
-        url: '/listUsers',
-        templateUrl: './components/users/listUsers/listUsers.html',
+      .state('retouchadd', {
+        url: '/retouchadd',
+        templateUrl: './components/retouch/retouchadd/retouchadd.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/users/listUsers/listUsers.controller.js')
+            return $ocLazyLoad.load('./components/retouch/retouchadd/retouchadd.controller.js')
           }]
         },
-        data:{
-          pageTitle: 'Listar usuarios | Laboratorio 1'
+        data: {
+          pageTitle: 'Registro de retoques | Laboratorio 1'
         },
-        controller: 'controladorListarUsuario',
+        controller: 'controladorAgregarRetoques',
+        controllerAs: 'vm'
+      })
+
+      .state('retouchmanage', {
+        url: '/retouchmanage',
+        templateUrl: './components/retouch/retouchmanage/retouchmanage.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/retouch/retouchmanage/retouchmanage.controller.js')
+          }]
+        },
+        data: {
+          pageTitle: 'Manejar Retoques | Laboratorio 1'
+        },
+        controller: 'controladorManejarRetoques',
         controllerAs: 'vm'
       })
       
-      .state('registerUndead', {
-        url: '/registerUndead',
-        templateUrl: './components/undead/registerUndead/registerUndead.view.html',
+      .state('retouchmodify', {
+        url: '/retouchmodify',
+        templateUrl: './components/retouch/retouchmodify/retouchmodify.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/undead/registerUndead/registerUndead.controller.js')
+            return $ocLazyLoad.load('./components/retouch/retouchmodify/retouchmodify.controller.js')
           }]
         },
-        data:{
-          pageTitle: 'Registro de difuntos | Laboratorio 1'
+        data: {
+          pageTitle: 'Modificar Retoques | Laboratorio 1'
         },
-        params: {
-          objUsuario: ''
+        params : {
+          objRetoqueTemp: ''
         },
-        controller: 'controladorRegistrarUndead',
+        controller: 'controladorModificarRetoques',
         controllerAs: 'vm'
       });
 

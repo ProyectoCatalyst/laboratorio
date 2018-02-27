@@ -37,13 +37,6 @@ class Retoque { // crear clase del retoque al cual se le dara mantenimiento.
   constructor(pnombre, pprecio) {
     this.nombre = pnombre,
     this.precio = pprecio
-
-  getCedula() {
-    return this.cedula;
-  }
-
-  setDifunto(pnuevoDifunto) {
-    this.difuntos.push(pnuevoDifunto);
   }
 }
 
@@ -53,5 +46,13 @@ class Difunto {
     this.edad = pedad;
     this.genero = pgenero;
     this.tamanno = ptamanno;
+  }
+  
+  getCedula() {
+    return this.cedula;
+  }
+
+  setDifunto(pnuevoDifunto) {
+    this.difuntos.push(pnuevoDifunto);
   }
 }
