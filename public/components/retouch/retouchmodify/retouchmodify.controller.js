@@ -10,19 +10,18 @@
     
     let vm = this;
 
-    let objSinFormato = JSON.parse($stateParams.objRetoqueTemp);
+    let objSinFormato = JSON.parse($stateParams.objRetoqueTemp); // tomar objeto que me envia el state manage
 
-    let objRetoque = new Retoque (objSinFormato.nombre, objSinFormato.precio);
+    let objRetoque = new Retoque (objSinFormato.nombre, objSinFormato.precio); // darle formato al objeto que recibo del state anterior
 
-    vm.retoqueoriginal = {};
+    vm.retoqueoriginal = objRetoque; // asignar el objeto a la lista la cual se va  a llamar desde la vista para mostrar el objeto original antes de moficarlo
 
-    vm.listaRetoqueOriginal = objRetoque;
+    vm.modificarRetoque = (pretoqueModificado) => {
+      let objRetoque = new Retoque (pretoqueModificado.nombre, pretoqueModificado.precio);
 
-    mostrarRetoques();
+      console.log(vm.retoqueoriginal);
+      console.log(objRetoque); // cva a mostrar el nombre modificado como indefinido ya que no logra pasar los datos
 
-    function mostrarRetoques(){
-      
-      vm.listaRetoqueOriginal = objRetoque;
 
     }
 
