@@ -49,3 +49,9 @@ class Difunto {
     this.tamanno = ptamanno;
   }
 }
+class Fiesta{
+  constructor(pfecha,phoras){
+    this.fecha = pfecha;
+    this.horas = phoras;
+  }
+}
