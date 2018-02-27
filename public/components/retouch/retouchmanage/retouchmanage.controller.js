@@ -23,7 +23,11 @@
       $state.go('retouchmodify', { objRetoqueTemp : JSON.stringify(pretoques)});
     }
 
-    
+    vm.eliminarRetoque = (pretoques) => {
+      let retoqueaeliminar = pretoques;
+      servicioRetoques.deleteRetoques(retoqueaeliminar);
 
+      $state.reload();
+    }
   }
 })();

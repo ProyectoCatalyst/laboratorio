@@ -11,7 +11,8 @@
     let publicAPI = {
       addRetoques: _addRetoques,
       getRetoques: _getRetoques,
-      modifyRetoques: _modifyRetoques
+      modifyRetoques: _modifyRetoques,
+      deleteRetoques: _deleteRetoques
     }
     return publicAPI;
 
@@ -45,7 +46,7 @@
       let listaRetoquesOrginal = _getRetoques();
 
       for(var i=0; i<listaRetoquesOrginal.length; i++){
-        if(listaRetoquesOrginal[i].nombre == paDatos[0].nombre){
+        if(listaRetoquesOrginal[i].nombre === paDatos[0].nombre){
 
           listaRetoquesOrginal[i] = paDatos[1];
           
@@ -56,6 +57,27 @@
       console.log(listaRetoquesOrginal);
 
       actualizarLista(listaRetoquesOrginal);
+    }
+
+    function _deleteRetoques(pretoqueaeliminar){
+      let listaRetoquesLocal = _getRetoques();
+      let listaRetoquesFinal = [];
+      let retoqueEliminar = pretoqueaeliminar;
+
+      // console.log(listaRetoquesLocal[0].nombre)
+      // console.log(retoqueEliminar.nombre)
+
+      for (let i = 0; i<listaRetoquesLocal.length; i++){
+        if ( listaRetoquesLocal[i].nombre === retoqueEliminar.nombre){
+
+        }else[
+          listaRetoquesFinal.push( listaRetoquesLocal[i] )
+        ]
+      }
+
+      // console.log(listaRetoquesFinal);
+      actualizarLista(listaRetoquesFinal)
+
     }
 
     function actualizarLista(plistaRetoquesOrginal){
