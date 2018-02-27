@@ -14,15 +14,16 @@
 
     let objRetoque = new Retoque (objSinFormato.nombre, objSinFormato.precio);
 
-    let retoques = objRetoque;
+    vm.retoqueoriginal = {};
 
-    mostrarRetoque();
+    vm.listaRetoqueOriginal = objRetoque;
 
-    function mostrarRetoque(){
+    mostrarRetoques();
 
-      console.log(retoques)
-      vm.retoques = objRetoque;
+    function mostrarRetoques(){
       
+      vm.listaRetoqueOriginal = objRetoque;
+
     }
 
   }
