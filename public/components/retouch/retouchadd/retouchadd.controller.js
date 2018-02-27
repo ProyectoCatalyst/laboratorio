@@ -4,9 +4,9 @@
   .module('laboratorio')
   .controller('controladorAgregarRetoques', controladorAgregarRetoques);
 
-  controladorAgregarRetoques.$inject = ['servicioRetoques']; //nombre del servicio
+  controladorAgregarRetoques.$inject = ['$stateParams', '$state', 'servicioRetoques']; //nombre del servicio
 
-  function controladorAgregarRetoques(servicioRetoques){
+  function controladorAgregarRetoques($stateParams, $state, servicioRetoques){
     let vm = this;
 
     vm.nuevoRetoque = {}; // agregar retoques por defecto
@@ -20,6 +20,10 @@
       servicioRetoques.addRetoques(objNuevoRetoque);
 
       vm.nuevoRetoque = null;
+    }
+
+    vm.mostrarRetoques = () => {
+      $state.go('retouchmanage');
     }
   }
 })();

@@ -18,6 +18,10 @@
       vm.listaRetoques = servicioRetoques.getRetoques();
     }
 
+    vm.agregarRetoque = () => {
+      $state.go('retouchadd');
+    }
+
     vm.modificarRetoque = (pretoques) => {
       // console.log (pretoques);
       $state.go('retouchmodify', { objRetoqueTemp : JSON.stringify(pretoques)});

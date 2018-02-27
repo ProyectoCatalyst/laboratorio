@@ -76,7 +76,7 @@
       }
 
       // console.log(listaRetoquesFinal);
-      actualizarLista(listaRetoquesFinal)
+      actualizarLista(listaRetoquesFinal) 
 
     }
 
