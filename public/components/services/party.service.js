@@ -4,44 +4,51 @@
     .module('laboratorio')
     .service('servicioFiesta', servicioFiesta);
 
-  servicioFiesta.$inject = ['$q', '$log', '$http']; 
-  function _agregarFiesta(pfiesta) {
-
-    let todasLasFiestas = _retornarFiesta();
-    let registroExitoso = true;
-
-    todasLasFiestas.push(pfiesta);
-
-    asyncLocalStorage.setItem('listaFiestasLS', todasLasFiestas).then((result) => {
-      registroExitoso = result
-    });
-
-    return registroExitoso;
-  }
-
-  function _retornarDifunto(pfiesta) {
-      
+  servicioFiesta.$inject = ['$q', '$log', '$http'];
+  function servicioFiesta($q, $log, $http){
     
-  }
+    let publicAPI = {
+      agregarUsuario: _agregarFiesta,
+      retornarFiesta: _retornarFiesta
+    };
+    return publicAPI;
 
-  function _retornarFiesta() {
-    let todasLasFiestas = [],
+    function _agregarFiesta(pfiesta) {
 
-      listaFiestas = JSON.parse(localStorage.getItem('listaFiestasLS'));
-
-    if (listaFiestas == null) {
-
-      return todasLasFiestas;
-
-    } else {
-
-      listaFiestas.forEach(obj => {
-
-        let objFiestaTemp = new Fiesta(obj.fecha, obj.horas, );
-
-        todasLasFiestas.push(objFiestaTemp);
+      let todasLasFiestas = _retornarFiesta();
+      let registroExitoso = true;
+  
+      todasLasFiestas.push(pfiesta);
+  
+      asyncLocalStorage.setItem('listaFiestasLS', todasLasFiestas).then((result) => {
+        registroExitoso = result
       });
+  
+      return registroExitoso;
     }
-    return todasLasFiestas;
+  
+  
+    function _retornarFiesta() {
+      let todasLasFiestas = [];
+  
+        listaFiestas = JSON.parse(localStorage.getItem('listaFiestasLS'));
+  
+      if (listaFiestas == null) {
+  
+        return todasLasFiestas;
+  
+      } else {
+  
+        listaFiestas.forEach(obj => {
+  
+          let objFiestaTemp = new Fiesta(obj.fecha, obj.horas);
+  
+          todasLasFiestas.push(objFiestaTemp);
+        });
+      }
+      return todasLasFiestas;
+    }
+
   }
-}
+  
+})();

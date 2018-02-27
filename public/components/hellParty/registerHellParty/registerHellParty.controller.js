@@ -14,7 +14,7 @@
     vm.registrarFiesta = (pfiestaNueva) => {
       let objFiestaNueva = new Fiesta
       (pfiestaNueva.fecha,
-        pfiestaNueva.horas;
+        pfiestaNueva.horas);
 
         let registro = servicioFiesta.agregarFiesta(objFiestaNueva);
 
