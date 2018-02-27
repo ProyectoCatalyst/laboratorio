@@ -12,10 +12,9 @@
 
     vm.fiestaNueva = {};
     vm.registrarFiesta = (pfiestaNueva) => {
-      let objFiestaNueva = new fiestaNueva
+      let objFiestaNueva = new Fiesta
       (pfiestaNueva.fecha,
-        pfiestaNueva.horas,
-        pfiestaNueva.pagoFiesta);
+        pfiestaNueva.horas;
 
         let registro = servicioFiesta.agregarFiesta(objFiestaNueva);
 
