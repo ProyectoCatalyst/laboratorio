@@ -8,7 +8,7 @@
   function servicioFiesta($q, $log, $http){
     
     let publicAPI = {
-      agregarUsuario: _agregarFiesta,
+      agregarFiesta: _agregarFiesta,
       retornarFiesta: _retornarFiesta
     };
     return publicAPI;

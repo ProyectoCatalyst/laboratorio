@@ -8,6 +8,8 @@
     controladorRegisterHellParty.$inject = [ 'servicioFiesta'];
 
   function controladorRegisterHellParty(servicioFiesta) {
+
+    
     let vm = this;
 
     vm.fiestaNueva = {};
@@ -15,8 +17,11 @@
       let objFiestaNueva = new Fiesta
       (pfiestaNueva.fecha,
         pfiestaNueva.horas);
-
+ 
         let registro = servicioFiesta.agregarFiesta(objFiestaNueva);
+
+
+
 
         if(registro == true){
           swal({
