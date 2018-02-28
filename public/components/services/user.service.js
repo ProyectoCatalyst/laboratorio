@@ -20,13 +20,9 @@
 
     let publicAPI = {
       agregarUsuario: _agregarUsuario,
-<<<<<<< HEAD
-      retornarUsuario: _retornarUsuario
-=======
       retornarUsuario: _retornarUsuario,
       agregarDifunto: _agregarDifunto,
       retornarDifunto: _retornarDifunto
->>>>>>> master
     };
     return publicAPI;
 
@@ -91,5 +87,40 @@
   function actualizarLista(listaActualizada){
     localStorage.setItem('listaUsuariosLS', JSON.stringify(listaActualizada));
   }
+
+
+
+  function _agregarEntierro(pnuevoEntierro){
+
+    let todosEntierros = _retornarEntierros; 
+    let registroExitoso = true;
+
+    todosEntierros.push(pnuevoEntierro);
+    asyncLocalStorage.setItem ('listaEntierrosLS', todosEntierros).then((respuesta) =>{
+      registroExitoso = respuesta;
+    });
+
+    return registroExitoso;
+  } 
+
+
   
-})();
+  function _retornarEntierro(){
+    let todosEntierros = [];
+
+    listaEntierros = JSON.parse(localStorage.getItem('listaEntierrosLS'));
+    
+    if (listaEntierros == null) {
+      return todosEntierros;
+
+    } else {
+      listaEntierros.forEach(obj => {
+        let EntierroTemp = new Entierro (obj.horaInicio, obj.horaFinal, obj.fecha, obj.lugar, obj. prioridad);
+
+        todosEntierros.push(objEntierroTemp);
+      });
+    }
+    return todosEntierros;
+  }
+  
+})(); 

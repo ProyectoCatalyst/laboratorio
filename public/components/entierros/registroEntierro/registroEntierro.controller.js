@@ -13,6 +13,11 @@
 
     vm.registrarEntierro = (pnuevoEntierro)=>{
       console.log (pnuevoEntierro);
+
+      vm.registrarEntierro = (pnuevoEntierro) =>{
+        let objEntierroTem
+      }
+
     }
   }
 })();

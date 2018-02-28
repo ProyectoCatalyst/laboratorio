@@ -6,7 +6,7 @@ import { get } from "https";
   .module('laboratorio')
   .service('servicioeEntierros', servicioEntierros);
 
-  servicioEntierros.$inject= ['$q', '$log', '$http'];
+  servicioEntierros.$inject= ['$q', '$log', '$http', 'servicioUsuarios'];
 
   function servicioEntierros ($q, $log, $http){
     const asyncLocalStorage = {

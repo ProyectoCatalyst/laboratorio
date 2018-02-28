@@ -48,22 +48,6 @@
         controller: 'controladorRegistrarUsuario',
         controllerAs: 'vm'
       })
-<<<<<<< HEAD
-      
-      
-      .state('registroEntierros', {
-        url: '/registroEntierro',
-        templateUrl: './components/entierros/registroEntierro/registroEntierro.view.html',
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/entierros/registroEntierro/registroEntierro.controller.js')
-          }]
-        },
-        data:{
-          pageTitle: 'Registro Entierros'
-        },
-        controller: 'controladorRegistroEntierro',
-=======
 
       .state('listUsers', {
         url: '/listUsers',
@@ -95,9 +79,27 @@
           objUsuario: ''
         },
         controller: 'controladorRegistrarUndead',
->>>>>>> master
         controllerAs: 'vm'
       });
+
+      .state('registrarEntierro',{
+        url: '/registrarEntierro',
+        templateUrl: './components/registrarEntierro/registroEntierro.view.html',
+        resolve: {
+          resolve: {
+            load: ['$ocLazyLoad', ($ocLazyLoad) => {
+              return $ocLazyLoad.load('./components/undead/registerUndead/registerUndead.controller.js')
+            }]
+          },
+          data:{
+            pageTitle: 'Registro de difuntos | Laboratorio 1'
+          },
+          params: {
+            objEntierro: ''
+          },
+          controller: 'controladorRegistrarEntierro',
+          controllerAs: 'vm'
+      })
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
     $urlRouterProvider.otherwise('/');

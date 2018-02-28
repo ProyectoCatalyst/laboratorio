@@ -14,6 +14,7 @@ class Usuario {
     this.correo = pcorreo;
     this.contrasenna = pcontrasenna;
     this.difuntos = [];
+    
   }
 
 
@@ -32,7 +33,11 @@ class Usuario {
   getContrasenna() {
     return this.contrasenna;
   }
-<<<<<<< HEAD
+
+  getCedula() {
+    return this.cedula;
+  }
+
 }
 
 class Entierro {
@@ -45,11 +50,6 @@ class Entierro {
   }
 
   
-=======
-
-  getCedula() {
-    return this.cedula;
-  }
 
   setDifunto(pnuevoDifunto) {
     this.difuntos.push(pnuevoDifunto);
@@ -62,6 +62,10 @@ class Difunto {
     this.edad = pedad;
     this.genero = pgenero;
     this.tamanno = ptamanno;
+    this.clienteID = '';
   }
->>>>>>> master
+
+  setClienteID(pIDCliente){
+     this.difunto.push(pIDCliente);
+  }
 }
