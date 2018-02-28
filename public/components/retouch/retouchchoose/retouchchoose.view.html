@@ -5,10 +5,12 @@
     <div class="card col-md-4" ng-repeat="retoques in vm.mostrarretoques">
 
       <div class="card-body row">
+        <p class="col-md-6">Nombre</p>
+        <p class="col-md-6">Precio</p>
         <p class="col-md-6">{{ retoques.nombre }}</p>
         <p class="col-md-6">{{ retoques.precio }}</p>
 
-        <button type="button" class="card-link">Agregar al carrito</button>
+        <button type="button" class="card-link col-md-12">Agregar al carrito</button>
       </div>
 
     </div>
