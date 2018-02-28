@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <table class="table">
     <thead>
       <tr>
@@ -14,15 +14,15 @@
         <td>{{retoques.nombre}}</td>
         <td>{{retoques.precio}}</td>
         <td>
-          <button type="button" ng-click="vm.modificarRetoque (retoques)">Modificar</button>
+          <button class="btn btn-primary" type="button" ng-click="vm.modificarRetoque (retoques)">Modificar</button>
         </td>
         <td>
-          <button type="button" ng-click="vm.eliminarRetoque (retoques)">Eliminar</button>
+          <button class="btn btn-danger" type="button" ng-click="vm.eliminarRetoque (retoques)">Eliminar</button>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <button ng-click="vm.agregarRetoque ()">Agregar retoque</button>
+  <button class="btn btn-success" ng-click="vm.agregarRetoque ()">Agregar retoque</button>
 
 </div>

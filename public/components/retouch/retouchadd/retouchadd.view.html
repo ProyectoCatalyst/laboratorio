@@ -1,16 +1,31 @@
-<div>
+<div class="container">
 
-  <form ng-submit="vm.registrarRetoques(vm.nuevoRetoque)">
+  <form class="row" ng-submit="vm.registrarRetoques(vm.nuevoRetoque)">
 
-    <label>Nombre del retoque</label>
-    <input type="text"  ng-model="vm.nuevoRetoque.nombre">
+    <div class="form-group col-md-6 m-3">
+      <label>Nombre del retoque: </label>
+      <input class="form-control" type="text" ng-model="vm.nuevoRetoque.nombre" required>
+    </div>
 
-    <label>Precio del retoque</label>
-    <input type="number"  ng-model="vm.nuevoRetoque.precio">
+
+    <div class="form-group col-md-6 m-3">
+      <label>Precio del retoque: </label>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <p class="input-group-text">₡</p>
+        </div>
+        <input class="form-control" type="number" ng-model="vm.nuevoRetoque.precio" required>
+      </div>
+
+    </div>
     
-    <button type="submit">Registrar</button>
+    <div class="col-md-6">
+      <button class="btn btn-primary m-2" type="submit">Registrar</button>
 
-    <button type="button" ng-click="vm.mostrarRetoques ()">Regresar</button>
+      <button class="btn btn-secondary m-2" type="button" ng-click="vm.mostrarRetoques ()">Regresar</button>
+    </div>
+
   </form>
 
 </div>

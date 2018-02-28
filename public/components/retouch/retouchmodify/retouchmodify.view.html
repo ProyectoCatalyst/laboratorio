@@ -1,16 +1,23 @@
-<div>
+<div class="container">
 
-  <form ng-submit="vm.modificarRetoque(vm.retoqueModificado)">
+  <form ng-submit="vm.modificarRetoque(vm.retoqueModificado)" class="row">
 
-      <p><span>Previo nombre:</span> {{vm.retoqueoriginal.nombre}}</p>
-      <label for="">Nombre del nuevo retoque</label>
-      <input type="text" ng-model="vm.retoqueModificado.nombre">
+      <div class="form-group col-md-6 m-3">
+        <p class="font-weight-bold"><span>Previo nombre:</span> {{vm.retoqueoriginal.nombre}}</p>
+        <label for="">Nombre del nuevo retoque</label>
+        <input class="form-control" type="text" ng-model="vm.retoqueModificado.nombre" required>
+      </div>
 
-      <p><span>Previo precio:</span> {{vm.retoqueoriginal.precio}}</p>
-      <label for="">Precio del nuevo retoque</label>
-      <input type="number" ng-model="vm.retoqueModificado.precio">
 
-      <button type="submit">Aceptar</button>
+      <div class="form-group col-md-6 m-3">
+        <p class="font-weight-bold"><span>Previo precio: ₡</span> {{vm.retoqueoriginal.precio}}</p>
+        <label for="">Precio del nuevo retoque</label>
+        <input class="form-control" type="number" ng-model="vm.retoqueModificado.precio" required>
+      </div>
+
+      <div class="col-md-8">
+        <button type="submit" class="btn btn-primary m-3">Aceptar</button>
+      </div>
 
   </form>
   

@@ -27,12 +27,29 @@
       let aDatos = [objRetoque, objNuevoRetoque];
 
       // console.log(aDatos); aDatos contiene el objeto que estoy modificando junto con los datos que voy a reemplazar 
+      
+      let modificar = verificarRetoques(aDatos);
 
-      servicioRetoques.modifyRetoques(aDatos);
-      vm.retoqueModificado = null
-      $state.go('retouchmanage');    
+      if (modificar == true){
+        servicioRetoques.modifyRetoques(aDatos); // enviara datos una vez sea verificado que no exista
+
+        vm.retoqueModificado = null
+        $state.go('retouchmanage'); 
+         
+        swal("Modificado", "Se ha hecho la modificaion", "success")
+      }else{
+        swal("No hay que modificar", "Verifica tus datos", "error")
+      }  
     }
 
+    function verificarRetoques(paDatos){
+      let modificar = false
+      if(paDatos[0].nombre === paDatos[1].nombre && paDatos[0].precio === paDatos[1].precio){
 
+      }else{
+        modificar = true
+      }
+      return modificar
+    }
   }
 })();

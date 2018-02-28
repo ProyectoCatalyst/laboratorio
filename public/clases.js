@@ -38,6 +38,13 @@ class Retoque { // crear clase del retoque al cual se le dara mantenimiento.
     this.nombre = pnombre,
     this.precio = pprecio
   }
+  getNombre(){
+    return this.nombre
+  }
+  
+  getPrecio(){
+    return this.precio
+  }
 }
 
 class Compra {
