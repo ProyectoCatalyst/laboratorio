@@ -80,7 +80,25 @@
         },
         controller: 'controladorRegistrarUndead',
         controllerAs: 'vm'
+      })
+      
+      
+      .state('registerEntertainer', {
+        url: '/registerEntertainer',
+        templateUrl: './components/entertainer/registerEntertainer/registerEntertainer.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/entertainer/registerEntertainer/registerEntertainer.controller.js')
+          }]
+        },
+        data:{
+          pageTitle: 'Listar animadores | Laboratorio 1'
+        },
+        controller: 'controladorRegistrarAnimador',
+        controllerAs: 'vm'
       });
+
+      
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
     $urlRouterProvider.otherwise('/');

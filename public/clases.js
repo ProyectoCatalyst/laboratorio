@@ -32,27 +32,11 @@ class Usuario {
   }
 }
 
-class Fiesta{
-  constructor(pfecha,phoras,ptipoPago){
-    this.fecha = pfecha;
-    this.horas = phoras;
-    this.tipoPago = ptipoPago;
-    this.costoFinal = '';
-  }
-
-  obtenerfecha(){
-    return `${this.fecha.getYear()} ${this.fecha.getMonth()} ${this.fecha.getDay()}`
-  }
-  getHorasFiesta(){
-    return this.horas;
-  }
-}
-
 class Animador{
-  constructor(pidAnimador,pnombreAnimador,pcostoAnimador){
-    this.id=pidAnimador;
-    this.nombre=pnombreAnimador;
-    this.costo=pcostoAnimador;
+  constructor(pcodigoAnimador,pnombreAnimador,pcostoAnimador){
+    this.codigoAnimador = pcodigoAnimador;
+    this.nombreAnimador = pnombreAnimador;
+    this.costoAnimador = pcostoAnimador;
   }
   getCostoAnimador(){
   return this.costoAnimador;
