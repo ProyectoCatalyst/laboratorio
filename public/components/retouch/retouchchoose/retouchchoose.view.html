@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="card col-md-4" ng-repeat="retoques in vm.mostrarretoques">
+
+      <div class="card-body row">
+        <p class="col-md-6">{{ retoques.nombre }}</p>
+        <p class="col-md-6">{{ retoques.precio }}</p>
+
+        <button type="button" class="card-link">Agregar al carrito</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

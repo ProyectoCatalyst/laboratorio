@@ -95,6 +95,21 @@
         },
         controller: 'controladorModificarRetoques',
         controllerAs: 'vm'
+      })
+      
+      .state('retouchchoose', {
+        url: '/retouchchoose',
+        templateUrl: './components/retouch/retouchchoose/retouchchoose.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/retouch/retouchchoose/retouchchoose.controller.js')
+          }]
+        },
+        data: {
+          pageTitle:'Elegir retoques | Laboratorio 1'
+        },
+        controller: 'controladorElegirRetoques',
+        controllerAs: 'vm'
       });
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
