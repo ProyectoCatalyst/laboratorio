@@ -40,6 +40,17 @@ class Retoque { // crear clase del retoque al cual se le dara mantenimiento.
   }
 }
 
+class Compra {
+  constructor(pnombre, pprecio) {
+    this.nombre = pnombre,
+    this.precio = pprecio
+  }
+
+  getNombre() {
+    return this.nombre
+  }
+}
+
 class Difunto {
   constructor(papodo, pedad, pgenero, ptamanno) {
     this.apodo = papodo;

@@ -1,16 +1,19 @@
 <div class="container">
 
-  <div class="row">
+  <div class="row justify-content-center">
 
-    <div class="card col-md-4" ng-repeat="retoques in vm.mostrarretoques">
+    <h1 class="col-md-12 text-center">Elija sus retoques !</h1>
+
+    <div class="card col-md-4 m-3" ng-repeat="retoques in vm.mostrarretoques">
 
       <div class="card-body row">
-        <p class="col-md-6">Nombre</p>
-        <p class="col-md-6">Precio</p>
-        <p class="col-md-6">{{ retoques.nombre }}</p>
-        <p class="col-md-6">{{ retoques.precio }}</p>
+        <h5 class="card-title col-md-6 text-center">Nombre</h5>
+        <h5 class="card-title col-md-6 text-center">Precio</h5>
 
-        <button type="button" class="card-link col-md-12">Agregar al carrito</button>
+        <p class="col-md-6 text-center" ng-model="vm.retoques.nombre">{{ retoques.nombre }}</p>
+        <p class="col-md-6 text-center" ng-model="vm.retoques.precio" >{{ retoques.precio }}</p>
+
+        <button type="button" class="btn btn-primary col-md-12" ng-click="vm.agregarretoques ( retoques )">Agregar al carrito</button>
       </div>
 
     </div>

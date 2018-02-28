@@ -12,7 +12,9 @@
       addRetoques: _addRetoques,
       getRetoques: _getRetoques,
       modifyRetoques: _modifyRetoques,
-      deleteRetoques: _deleteRetoques
+      deleteRetoques: _deleteRetoques,
+      addCompra: _addCompra,
+      getCompra: _getCompra
     }
     return publicAPI;
 
@@ -54,7 +56,7 @@
       }
 
 
-      console.log(listaRetoquesOrginal);
+      // console.log(listaRetoquesOrginal);
 
       actualizarLista(listaRetoquesOrginal);
     }
@@ -80,9 +82,33 @@
 
     }
 
+    function _addCompra(pobjCompra){
+      let listaCompra = _getCompra();
+      listaCompra.push(pobjCompra);
+      localStorage.setItem('compraLS', JSON.stringify(listaCompra));
+
+    }
+
+    function _getCompra(){
+      let listaCompraLocal = JSON.parse(localStorage.getItem('compraLS')),
+          listaCompra = [];
+
+      if(listaCompraLocal == null){
+        return listaCompra
+      }else{
+        listaCompraLocal.forEach(objTemp => {
+          let objCompra = new Compra (objTemp.nombre, objTemp.precio);
+        
+          listaCompra.push(objCompra);
+        
+        });
+      }
+
+      return listaCompra
+    }
+
     function actualizarLista(plistaRetoquesOrginal){
       localStorage.setItem('retoquesLS', JSON.stringify(plistaRetoquesOrginal));
     }
-
   }
 })();
