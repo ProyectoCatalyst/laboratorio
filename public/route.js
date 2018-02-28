@@ -80,26 +80,26 @@
         },
         controller: 'controladorRegistrarUndead',
         controllerAs: 'vm'
-      });
+      })
 
       .state('registrarEntierro',{
         url: '/registrarEntierro',
-        templateUrl: './components/registrarEntierro/registroEntierro.view.html',
-        resolve: {
+        templateUrl: './components/entierros/registroEntierro.view.html',
           resolve: {
             load: ['$ocLazyLoad', ($ocLazyLoad) => {
-              return $ocLazyLoad.load('./components/undead/registerUndead/registerUndead.controller.js')
+              return $ocLazyLoad.load('./components/entierros/registrarEntierro/registroEntierro.controller.js')
             }]
           },
           data:{
-            pageTitle: 'Registro de difuntos | Laboratorio 1'
+            pageTitle: 'Registro de Entierros | Laboratorio 1'
           },
           params: {
             objEntierro: ''
           },
           controller: 'controladorRegistrarEntierro',
           controllerAs: 'vm'
-      })
+          
+      });
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
     $urlRouterProvider.otherwise('/');
