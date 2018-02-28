@@ -4,9 +4,9 @@
     .module('laboratorio')
     .controller('controladorInicioSesion', controladorInicioSesion);
 
-  controladorInicioSesion.$inject = ['servicioUsuarios', 'authService'];
+  controladorInicioSesion.$inject = ['$window', 'servicioUsuarios', 'authService', 'facebookService'];
 
-  function controladorInicioSesion(servicioUsuarios, authService) {
+  function controladorInicioSesion($window, servicioUsuarios, authService, facebookService) {
     let vm = this;
 
     vm.usuario = {};
@@ -22,8 +22,14 @@
       }
     }
 
-    vm.iniciarSesionFacebook = () => {
-      
+    vm.iniciarSesionFacebook = ($window) => {
+      FB.init({ 
+        appId: '1128360287299589',
+        status: true, 
+        cookie: true, 
+        xfbml: true,
+        version: 'v2.12'
+      });
     }
   }
 })();

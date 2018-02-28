@@ -44,17 +44,21 @@
         </div>
         <div class="form-group">
           <label for="txtProvincia">Provincia</label>
-          <select id="txtProvincia" ng-model="vm.usuarioNuevo.provincia"class="custom-select" required>
+          <select id="txtProvincia" ng-model="vm.usuarioNuevo.provincia" class="custom-select" required>
             <option value="{{provincia._id}}" ng-repeat="provincia in vm.provincias">{{provincia.name}}</option>
           </select>
         </div>
         <div class="form-group">
           <label for="txtCanton">Cantón</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.canton" id="txtCanton" required>
+          <select id="txtCanton" ng-model="vm.usuarioNuevo.canton" class="custom-select" required>
+            <option value="{{canton._id}}" ng-repeat="canton  in vm.cantones">{{canton.name}}</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="txtDistrito">Distrito</label>
-          <input type="text" class="form-control" ng-model="vm.usuarioNuevo.distrito" id="txtDistrito" required>
+          <select id="txtDistrito" ng-model="vm.usuarioNuevo.distrito" class="custom-select" required>
+            <option value="{{distrito.idCanton}}" ng-repeat="distrito in vm.distritos">{{distrito.name}}</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="txtUsuario">Usuario</label>

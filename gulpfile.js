@@ -40,7 +40,7 @@ gulp.task('dependencies', () => {
     './node_modules/bootstrap/dist/css/bootstrap.min.css',
     './node_modules/bootstrap-social/bootstrap-social.css',
     './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/popper.js/dist/popper.min.js'
+    './node_modules/popper.js/dist/umd/popper.js'
   ])
     .pipe(gulp.dest('./public/lib/bootstrap'));
   gulp.src([
@@ -57,6 +57,10 @@ gulp.task('dependencies', () => {
     './node_modules/provinces/provinces.json'
   ])
     .pipe(gulp.dest('./public/lib'));
+  gulp.src([
+    './node_modules/angular-facebook-api-factory/dist/angular-facebook-api-factory.min.js'
+  ])
+    .pipe(gulp.dest('./public/lib/api/'));
 });
 
 gulp.task('reload', () => {
