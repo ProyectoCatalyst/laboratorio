@@ -3,12 +3,11 @@
   angular
     .module('laboratorio')
     .service('servicioFiesta', servicioFiesta);
-    
-    
+
+    servicioFiesta.$inject = ['$q', '$log', '$http']; 
   
-  servicioFiesta.$inject = ['$q', '$log', '$http'];
-  function servicioFiesta($q, $log, $http){
-    
+  function servicioFiesta($q, $log, $http) {
+
     const asyncLocalStorage = {
       setItem: function (key, value) {
           return Promise.resolve().then(() => {
@@ -20,46 +19,64 @@
     }
 
     let publicAPI = {
-      agregarFiesta: _agregarFiesta,
+      agregarFiestas: _agregarFiestas,
       retornarFiesta: _retornarFiesta
-    };
+    }
     return publicAPI;
 
-    function _agregarFiesta(pfiesta) {
-      let todasLasFiestas = _retornarFiesta();
-      let registroExitoso = true;
-  
-      todasLasFiestas.push(pfiesta);
-  
-      asyncLocalStorage.setItem('listaFiestasLS', todasLasFiestas).then((result) => {
-        registroExitoso = result
-      });
-  
-      return registroExitoso;
-    }
-  
-  
-    function _retornarFiesta() {
-      let todasLasFiestas = [];
-  
-      let listaFiestas = JSON.parse(localStorage.getItem('listaFiestasLS'));
-  
-      if (listaFiestas == null) {
-  
-        return todasLasFiestas;
-  
-      } else {
-  
-        listaFiestas.forEach(obj => {
-  
-          let objFiestaTemp = new Fiesta(obj.fecha, obj.horas);
-  
-          todasLasFiestas.push(objFiestaTemp);
-        });
-      }
-      return todasLasFiestas;
-    }
+    function _agregarFiestas(pfiestaNueva) {
 
-  }
+      let listaFiestas = _retornarFiesta();
+      let costoFiesta = calcularCostoFiesta(pfiestaNueva.horas,pfiestaNueva.pilar,pfiestaNueva.andrey);
+      listaFiestas.push(pfiestaNueva);
+      alert(costoFiesta);
+        localStorage.setItem('listaFiestasLS',JSON.stringify(listaFiestas));
+      }
+
+      function _retornarFiesta(){
+        let listaFiestas = [];
+        let listaFiestasLocal = JSON.parse(localStorage.getItem("listaFiestasLS"));
   
-})();
+        if(listaFiestasLocal == null){
+          listaFiestas = [];
+        }else{
+          listaFiestasLocal.forEach(obj => {
+            
+            let objFiestas = new Fiesta(obj.fecha,obj.horas,obj.pilar,obj.andrey);
+            listaFiestas.push(objFiestas);
+          })
+        }
+  
+        return listaFiestas;
+      }
+  
+
+
+      function calcularCostoFiesta(horas,pilar,andrey){
+        let costoPilar;
+        let costoAndrey;
+
+
+        if(pilar == true){
+          costoPilar = 30;
+        }else{
+          costoPilar = 0;
+        }
+      
+        if(andrey == true){
+          costoAndrey = 25;
+        }else{
+          costoAndrey = 0;
+        }
+      
+      let costoTotal = (65 * horas) + (costoPilar * horas) + (costoAndrey * horas);   
+       
+      return costoTotal; 
+      }
+
+
+      function actualizarLocal(plistaActualizada){
+        localStorage.setItem('listaFiestasLS', JSON.stringify(plistaActualizada));
+      }
+    }
+  })();

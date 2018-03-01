@@ -1,24 +1,48 @@
 (() => {
   'use strict';
   angular
-  .module('laboratorio')
-  .controller('controladorRegistrarFiesta', controladorRegistrarFiesta);
+    .module('laboratorio')
+    .controller('controladorRegistrarFiesta', controladorRegistrarFiesta);
 
-  controladorRegistrarFiesta.$inject = ['$stateParams','$state','servicioFiesta'];
+    controladorRegistrarFiesta.$inject = ['$stateParams','$state','$http','servicioFiesta'];
 
-  function controladorRegistrarFiesta($stateParams, $state, servicioFiesta) {
+  function controladorRegistrarFiesta($stateParams, $state, $http, servicioFiesta) {
     let vm = this;
 
-    vm.fiestaNueva = {};
+    vm.FiestaNueva = {};
+    vm.listaFiestas = listarFiestas();
 
+    listarFiestas();
     vm.registrarFiesta = (pfiestaNueva) => {
-      
       console.log(pfiestaNueva);
-      
-      let objFiestaNueva = new Fiesta(pfiestaNueva.fecha, pfiestaNueva.horas);
-        
-      let registro = servicioFiesta.agregarFiesta(objFiestaNueva);
+      let objNuevoFiesta = new Fiesta (pfiestaNueva.fecha, pfiestaNueva.costoHora,
+      pfiestaNueva.pilar,
+      pfiestaNueva.andrey
+      );
 
+      console.log('objeto con fiesta');
+      console.log(objNuevoFiesta);
+
+      servicioFiesta.agregarFiestas(objNuevoFiesta);
+        swal({
+          title: "Registro exitoso",
+          text: "Fiesta registrado correctamente",
+          icon: "success",
+          button: "Aceptar"
+        });
+      
+      vm.FiestaNueva = null;
+      listarFiestas();
+      }
+
+      function listarFiestas(){
+        vm.listaFiestas = servicioFiesta.retornarFiesta(); 
+      }
+
+      
+
+
+      
     }
-  }
+
 })();
