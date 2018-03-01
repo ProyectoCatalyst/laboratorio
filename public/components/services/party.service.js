@@ -16,7 +16,6 @@
     return publicAPI;
 
     function _agregarFiesta(pfiesta) {
-      Windows.alert("agregarFiesta");
       let todasLasFiestas = _retornarFiesta();
       let registroExitoso = true;
   

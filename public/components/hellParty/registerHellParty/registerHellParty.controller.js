@@ -1,10 +1,12 @@
 (() => {
   'use strict';
-  angular.module('laboratorio');
-  angular.controller('controladorRegistrarFiesta', controladorRegistrarFiesta);
+  angular
+  
+  .module('laboratorio')
+  .controller('controladorRegistrarFiesta',controladorRegistrarFiesta);
     //controladorRegistrarFiesta);
 
-    controladorRegistrarFiesta.$inject = ['servicioFiesta'];
+    controladorRegistrarFiesta.$inject = ['$stateParams','$state','servicioFiesta'];
 
   function controladorRegistrarFiesta(servicioFiesta) {
 
@@ -13,10 +15,15 @@
 
     vm.fiestaNueva = {};
     vm.registrarFiesta = (pfiestaNueva) => {
+      
+      console.log(pfiestaNueva)
+      
       let objFiestaNueva = new Fiesta
       (pfiestaNueva.fecha,
         pfiestaNueva.horas);
  
+
+        
         let registro = servicioFiesta.agregarFiesta(objFiestaNueva);
 
 
