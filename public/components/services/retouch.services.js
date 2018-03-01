@@ -14,7 +14,8 @@
       modifyRetoques: _modifyRetoques,
       deleteRetoques: _deleteRetoques,
       addCompra: _addCompra,
-      getCompra: _getCompra
+      getCompra: _getCompra,
+      deleteCompra: _deleteCompra
     }
     return publicAPI;
 
@@ -48,9 +49,11 @@
       let listaRetoquesOrginal = _getRetoques();
 
       for(var i=0; i<listaRetoquesOrginal.length; i++){
-        if(listaRetoquesOrginal[i].nombre === paDatos[0].nombre){
+        if(listaRetoquesOrginal[i].getNombre() === paDatos[0].nombre){
 
           listaRetoquesOrginal[i] = paDatos[1];
+
+          // en paDatos[0] esta el dato original, en paDatos[1] el dato que voy a reemplazar
           
         }
       }
@@ -58,7 +61,7 @@
 
       // console.log(listaRetoquesOrginal);
 
-      actualizarLista(listaRetoquesOrginal);
+      actualizarListaRetoques(listaRetoquesOrginal);
     }
 
     function _deleteRetoques(pretoqueaeliminar){
@@ -78,7 +81,7 @@
       }
 
       // console.log(listaRetoquesFinal);
-      actualizarLista(listaRetoquesFinal) 
+      actualizarListaRetoques(listaRetoquesFinal) 
 
     }
 
@@ -94,7 +97,7 @@
           listaCompra = [];
 
       if(listaCompraLocal == null){
-        return listaCompra
+        listaCompra = [];
       }else{
         listaCompraLocal.forEach(objTemp => {
           let objCompra = new Compra (objTemp.nombre, objTemp.precio);
@@ -107,7 +110,29 @@
       return listaCompra
     }
 
-    function actualizarLista(plistaRetoquesOrginal){
+    function _deleteCompra(pobjCompra){
+      let listaCompraLocal = _getCompra(),
+          listaCompraFinal = [];
+
+      for(let i=0; i<listaCompraLocal.length; i++){
+        if(listaCompraLocal[i].nombre == pobjCompra.nombre){
+
+        }else{
+          listaCompraFinal.push(listaCompraLocal[i])
+        }
+      }
+
+      actualizarListaCompras(listaCompraFinal);
+    }
+
+    function actualizarListaCompras(plistaCompraFinal){
+
+      // console.log(plistaCompraFinal)
+      localStorage.setItem('compraLS', JSON.stringify(plistaCompraFinal));
+    }
+
+
+    function actualizarListaRetoques(plistaRetoquesOrginal){
       localStorage.setItem('retoquesLS', JSON.stringify(plistaRetoquesOrginal));
     }
   }

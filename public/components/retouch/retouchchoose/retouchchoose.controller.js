@@ -5,12 +5,13 @@
   .module('laboratorio')
   .controller('controladorElegirRetoques', controladorElegirRetoques);
 
-  controladorElegirRetoques.$inject = ['servicioRetoques'];
+  controladorElegirRetoques.$inject = ['$state', 'servicioRetoques'];
 
-  function controladorElegirRetoques(servicioRetoques){
+  function controladorElegirRetoques($state, servicioRetoques){
     let vm = this;
 
     vm.mostrarretoques = servicioRetoques.getRetoques(); // mostrar retoques en la vista
+    vm.mostrarCompra = servicioRetoques.getCompra();
 
     vm.agregarretoques = (pretoques) => {
       let objCompra = new Compra (pretoques.nombre, pretoques.precio),
@@ -25,10 +26,21 @@
       if(agregarCompra == true){
         swal("Gracias", "Hemos agregado el ítem", "success");
 
+        $state.reload()
+        
         servicioRetoques.addCompra(objCompra)
       }else{
         swal("Error", "Ya has agregado el ítem", "error");
       }
+    }
+
+
+    vm.eliminarCompra = (pcompras) => {
+      let objCompra = new Compra (pcompras.nombre, pcompras.precio);
+
+      servicioRetoques.deleteCompra(objCompra);
+
+      $state.reload()
     }
 
     function compraExistente(pobjCompra, listaCompra){

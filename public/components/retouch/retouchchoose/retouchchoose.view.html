@@ -18,6 +18,32 @@
 
     </div>
 
+    <div class="col-md-12">
+
+      <h1 class="h1 my-5 text-center">Tu compra</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="compras in vm.mostrarCompra">
+            <td>{{compras.nombre}}</td>
+            <td>{{compras.precio}}</td>
+            <td>
+              <button ng-click="vm.eliminarCompra(compras)" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+
   </div>
 
 </div>
