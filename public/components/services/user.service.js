@@ -90,10 +90,18 @@
 
 
 
-  function _agregarEntierro(pnuevoEntierro){
+  function _agregarEntierro(aIDCliente){
 
-    let todosEntierros = _retornarEntierros; 
-    let registroExitoso = true;
+    let todosEntierros = _retornarEntierros(); 
+    let registroExitoso = false;
+
+    for(let i = 0; i< todosLosDifuntos.length; i++){
+      if (aDifuntos[0].getIDCliente() === todosLosDifuntos[i].getIDCliente()){
+        todosLosDifuntos[i].setEntierro(aDifuntos[1]);
+        registroExitoso = true;
+      }
+    }
+
 
     todosEntierros.push(pnuevoEntierro);
     asyncLocalStorage.setItem ('listaEntierrosLS', todosEntierros).then((respuesta) =>{
@@ -104,7 +112,7 @@
   } 
 
 
-  
+
   function _retornarEntierro(){
     let todosEntierros = [];
 
@@ -122,5 +130,6 @@
     }
     return todosEntierros;
   }
+
   
 })(); 

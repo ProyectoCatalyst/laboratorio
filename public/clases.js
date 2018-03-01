@@ -49,7 +49,12 @@ class Entierro {
     this.prioridad = pprioridad;
   }
 
-  
+
+  setEntierro(pnuevoEntierro){
+    this.entierro.push(pnuevoEntierro);
+  }
+
+ 
 
   setDifunto(pnuevoDifunto) {
     this.difuntos.push(pnuevoDifunto);
@@ -66,6 +71,6 @@ class Difunto {
   }
 
   setClienteID(pIDCliente){
-     this.difunto.push(pIDCliente);
+     this.difunto = pIDCliente;
   }
 }
