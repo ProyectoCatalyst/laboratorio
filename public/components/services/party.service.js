@@ -9,6 +9,16 @@
   servicioFiesta.$inject = ['$q', '$log', '$http'];
   function servicioFiesta($q, $log, $http){
     
+    const asyncLocalStorage = {
+      setItem: function (key, value) {
+          return Promise.resolve().then(() => {
+              let response = true;
+              localStorage.setItem(key, JSON.stringify(value));
+              return response
+          });
+      }
+    }
+
     let publicAPI = {
       agregarFiesta: _agregarFiesta,
       retornarFiesta: _retornarFiesta
@@ -30,10 +40,9 @@
   
   
     function _retornarFiesta() {
-      Windows.alert("agregarFiesta");
       let todasLasFiestas = [];
   
-        listaFiestas = JSON.parse(localStorage.getItem('listaFiestasLS'));
+      let listaFiestas = JSON.parse(localStorage.getItem('listaFiestasLS'));
   
       if (listaFiestas == null) {
   

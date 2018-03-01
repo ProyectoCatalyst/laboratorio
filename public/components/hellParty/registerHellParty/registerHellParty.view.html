@@ -1,29 +1,47 @@
-<div ng-include="'./components/includes/_header.html'"></div>
+
+<div ng-include="'./components/includes/'_header.html"></div>
+<div> .</div>
 <section class="">
-  <div class="">
-    <div class="">
-      <form class="" name="frmRegistrarFiesta" ng-submit="vm.registrarFiesta(vm.fiestaNueva)" novalidate autocomplete="off">
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="dateFiesta">Fecha</label>
-            <input type="date" class="form-control" ng-model="vm.fiestaNueva.fecha" required>  
-          </div>
-          <div class="form-group">
-            <label for="horasFiesta">Horas</label>
-            <input type="num"class="form-control" ng-model="vm.fiestaNueva.horas" required>  
-          </div>
-          <label for="tarifa">Tarifa básica: $65</label>
-        </div>
+  <div class="col-4">
+    <form class="" name="frmRegistrarFiesta" ng-submit="vm.registrarFiesta(vm.fiestaNueva)" novalidate autocomplete="off">
+      
+      <div class="form-group">
+        <label for="dateFiesta">Fecha de la fiesta</label>
+        <input type="date" class="form-control" ng-model="vm.fiestaNueva.fecha" required>  
       </div>
-     <!-- <div class="metodoPagoFiesta">
+      <div class="form-group">
+        <label for="horasFiesta">Duración en horas de la fiesta</label>
+        <input type="num"class="form-control" ng-model="vm.fiestaNueva.horas" required>  
+      </div>
+
+      <div>
+        <label for="tarifa">Tarifa básica por hora: $65</label>
+      </div>
+      <div>
+        <label for="tarifa">Animadores disponibles</label>
+        
+        <div ng-app="app" ng-controller="appCtrl as vm">
+            <p> <ol>
+                <li><input type="checkbox" ng-model="all"/>
+                Payaso Pabs - $100</li>
+                <li><input type="checkbox" ng-model="vm.activo"/>
+                Payaso Kev - $75</li>
+                <li><input type="checkbox" ng-model="vm.activo"/>
+                Payasa Monse - $50</li>
+              </ol>
+            </p>
+        </div>
+    </div>
+     <div class="metodoPagoFiesta">
        <label for="lbPago">Seleccione la forma de pago: </label>
        <select name="" id="pagoFiesta">
          <option value="tarjeta">Tarjeta</option>
-         <option  value="efectivo">efectivo</option>
+         <option  value="efectivo">Efectivo</option>
        </select>
-     </div> -->
-     <div class="col-md-12">
-       <button type="submit" class="btn  btn-primary" >Solicitar Fiesta</button>
-   </div>
-  </form>
+     </div>
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary" >Solicitar Fiesta</button>
+      </div>
+    </form>
   </div>
+</section>
