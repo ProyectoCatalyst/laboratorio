@@ -95,7 +95,7 @@
         params: {
           objFiesta: ''
         },
-        controller: 'controladorRegisterHellParty',
+        controller: 'controladorRegistrarFiesta',
         controllerAs: 'vm'
       });
 

@@ -3,7 +3,9 @@
   angular
     .module('laboratorio')
     .service('servicioFiesta', servicioFiesta);
-
+    
+    
+  
   servicioFiesta.$inject = ['$q', '$log', '$http'];
   function servicioFiesta($q, $log, $http){
     
@@ -14,7 +16,7 @@
     return publicAPI;
 
     function _agregarFiesta(pfiesta) {
-
+      Windows.alert("agregarFiesta");
       let todasLasFiestas = _retornarFiesta();
       let registroExitoso = true;
   
@@ -29,6 +31,7 @@
   
   
     function _retornarFiesta() {
+      Windows.alert("agregarFiesta");
       let todasLasFiestas = [];
   
         listaFiestas = JSON.parse(localStorage.getItem('listaFiestasLS'));

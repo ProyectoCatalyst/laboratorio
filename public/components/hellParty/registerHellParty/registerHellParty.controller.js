@@ -1,13 +1,12 @@
 (() => {
   'use strict';
-  angular
-    .module('laboratorio')
-    .controller('controladorRegisterHellParty', controladorRegisterHellParty);
+  angular.module('laboratorio');
+  angular.controller('controladorRegistrarFiesta', controladorRegistrarFiesta);
     //controladorRegistrarFiesta);
 
-    controladorRegisterHellParty.$inject = [ 'servicioFiesta'];
+    controladorRegistrarFiesta.$inject = ['servicioFiesta'];
 
-  function controladorRegisterHellParty(servicioFiesta) {
+  function controladorRegistrarFiesta(servicioFiesta) {
 
     
     let vm = this;
@@ -21,15 +20,6 @@
         let registro = servicioFiesta.agregarFiesta(objFiestaNueva);
 
 
-
-
-        if(registro == true){
-          swal({
-            title: "Registro exitoso",
-            text: "Fiesta correctamente registrado",
-            icon: "success",
-          });
-        }
       }
     }
   }
