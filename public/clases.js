@@ -41,4 +41,8 @@ class Animador{
   getCostoAnimador(){
   return this.costoAnimador;
   }
+
+  getCodigoAnimador(){
+    return this.codigoAnimador;
+  }
 }

@@ -7,7 +7,7 @@
       <form ng-submit="vm.registrarAnimador(vm.AnimadorNuevo)">
           <div class="form-group">
             <label for="txtCodigoAnimador">Código: </label>
-            <input type="text" class="form-control" ng-model="vm.AnimadorNuevo.codigoAnimador" id="txtCodigoAnimador" required>
+            <input type="number" class="form-control" ng-model="vm.AnimadorNuevo.codigoAnimador" id="txtCodigoAnimador" required>
           </div>
         
           <div class="form-group">
@@ -17,7 +17,7 @@
         
           <div class="form-group">
             <label for="txtCostoAnimador">Costo por hora:</label>
-            <input type="text" class="form-control" ng-model="vm.AnimadorNuevo.costoAnimador" id="txtCostoAnimador" required>
+            <input type="number" class="form-control" ng-model="vm.AnimadorNuevo.costoAnimador" id="txtCostoAnimador" required>
           </div>
         
           <button type="submit" class="btn btn-primary">Registrar Animador</button>
@@ -39,6 +39,9 @@
             <td>{{animador.codigoAnimador}}</td>
             <td>{{animador.nombreAnimador}}</td>
             <td>{{animador.costoAnimador}}</td>
+            <td>
+              <button type="button" class="btn btn-secondary" ng-click="vm.editarAnimador(animador)">Actualizar</button>
+            </td>
           </tr>
         </tbody>
       </table>

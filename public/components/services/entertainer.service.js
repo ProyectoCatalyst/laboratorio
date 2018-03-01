@@ -27,29 +27,41 @@
     function _agregarAnimador(panimadorNuevo) {
 
       let listaAnimadores = _retornarAnimador();
-      listaAnimadores.push(panimadorNuevo);
-        localStorage.setItem('listaAnimadoresLS',JSON.stringify(listaAnimadores));
+      let validarCodigo = true;
+      let tamanno = listaAnimadores.length;
+      for(let i=0; i < tamanno; i++){
+        if(panimadorNuevo.getCodigoAnimador() == listaAnimadores[i].getCodigoAnimador()){
+          validarCodigo=false;
+        }
       }
 
-      function _retornarAnimador(){
-        let listaAnimadores = [];
-        let listaAnimadoresLocal = JSON.parse(localStorage.getItem("listaAnimadoresLS"));
-  
-        if(listaAnimadoresLocal == null){
-          listaAnimadores = [];
-        }else{
-          listaAnimadoresLocal.forEach(obj => {
-            
-            let objAnimadores = new Animador(obj.codigoAnimador,obj.nombreAnimador,obj.costoAnimador);
-            listaAnimadores.push(objAnimadores);
-          })
-        }
-  
-        return listaAnimadores;
+      if(validarCodigo == true){
+        listaAnimadores.push(panimadorNuevo);
+        localStorage.setItem('listaAnimadoresLS',JSON.stringify(listaAnimadores));
       }
-  
-      function actualizarLocal(plistaActualizada){
-        localStorage.setItem('listaAnimadoresLS', JSON.stringify(plistaActualizada));
-      }
+      
+      return validarCodigo;
     }
-  })();
+
+    function _retornarAnimador(){
+      let listaAnimadores = [];
+      let listaAnimadoresLocal = JSON.parse(localStorage.getItem("listaAnimadoresLS"));
+
+      if(listaAnimadoresLocal == null){
+        listaAnimadores = [];
+      }else{
+        listaAnimadoresLocal.forEach(obj => {
+          
+          let objAnimadores = new Animador(obj.codigoAnimador,obj.nombreAnimador,obj.costoAnimador);
+          listaAnimadores.push(objAnimadores);
+        })
+      }
+
+      return listaAnimadores;
+    }
+  
+    function actualizarLocal(plistaActualizada){
+      localStorage.setItem('listaAnimadoresLS', JSON.stringify(plistaActualizada));
+    }
+  }
+})();

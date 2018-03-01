@@ -20,22 +20,24 @@
       console.log('objeto con animador');
       console.log(objNuevoAnimador);
 
-      servicioAnimadores.agregarAnimador(objNuevoAnimador);
+      let codigoValidado = servicioAnimadores.agregarAnimador(objNuevoAnimador);
 
-      if (registro == true) {
+      if(codigoValidado == true){
         swal({
           title: "Registro exitoso",
           text: "Animador registrado correctamente",
-          icon: "success"
+          icon: "success",
+          button: "Aceptar"
         });
       }else{
         swal({
           title: "Registro fallido",
-          text: "El animador ya está registrado",
-          icon: "failed",
+          text: "El animador ya ha sido registrado anteriormente",
+          icon: "error",
           button: "Aceptar"
-        })
+        });
       }
+
       
 
       vm.AnimadorNuevo = null;
@@ -44,6 +46,11 @@
 
       function listarAnimadores(){
         vm.listaAnimadores = servicioAnimadores.retornarAnimador(); 
+      }
+
+
+      vm.editarAnimador = (panimador)=>{
+      $state.go('editarAnimador', { objAnimadorTemp : JSON.stringify(panimador)});
       }
     }
 
