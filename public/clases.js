@@ -47,5 +47,12 @@ class Difunto {
     this.edad = pedad;
     this.genero = pgenero;
     this.tamanno = ptamanno;
+    this.servicios = [];
+
   }
+  addServicios (pnuevoServicio){
+    this.servicios.push(pnuevoServicio);
+  }
+
 }
+

@@ -80,9 +80,25 @@
         },
         controller: 'controladorRegistrarUndead',
         controllerAs: 'vm'
+      })
+      
+      .state('listUndead', {
+        url: '/listUndead',
+        templateUrl: './components/undead/listUndead/listUndead.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/undead/listUndead/listUndead.controller.js')
+          }]
+        },
+        data:{
+          pageTitle: 'Listar Difuntos | Laboratorio 1'
+        },
+        controller: 'controladorListaDifunto',
+        controllerAs: 'vm'
       });
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)
     $urlRouterProvider.otherwise('/');
   };
 })();
+

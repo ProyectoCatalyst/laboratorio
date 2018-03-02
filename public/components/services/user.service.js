@@ -40,9 +40,12 @@
       return registroExitoso;
     }
 
-    function _retornarDifunto(pusuario) {
-        
-      
+    function _retornarDifunto() {
+      let listaUsuario = _retornarUsuario(),
+          objUsuarioTem = new Usuario(listaUsuario.nombre, listaUsuario.primerApellido, listaUsuario.segundoApellido, listaUsuario.cedula, listaUsuario.fecha, listaUsuario.genero, listaUsuario.foto, listaUsuario.ubicacion, listaUsuario.privincia, listaUsuario.canton, listaUsuario.distrito, listaUsuario.usuario, listaUsuario.correo, listaUsuario.contrasenna, listaUsuario.difuntos),
+          listaDifuntos = objUsuarioTem.difuntos;
+
+          console.log(listaUsuario); 
     }
 
     function _retornarUsuario() {
@@ -56,13 +59,16 @@
 
       } else {
 
+        // console.log(listaUsuarios)
         listaUsuarios.forEach(obj => {
 
-          let objUsuarioTemp = new Usuario(obj.nombre, obj.primerApellido, obj.segundoApellido, obj.cedula, obj.fecha, obj.genero, obj.foto, obj.ubicacion, obj.provincia, obj.canton, obj.distrito, obj.usuario, obj.correo, obj.contrasenna);
+          let objUsuarioTemp = new Usuario(obj.nombre, obj.primerApellido, obj.segundoApellido, obj.cedula, obj.fecha, obj.genero, obj.foto, obj.ubicacion, obj.provincia, obj.canton, obj.distrito, obj.usuario, obj.correo, obj.contrasenna); // si lo guarda pero en posicion diferente
 
           todosLosUsuarios.push(objUsuarioTemp);
         });
       }
+
+      console.log(todosLosUsuarios)
       return todosLosUsuarios;
     }
 
