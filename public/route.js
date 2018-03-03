@@ -84,10 +84,10 @@
 
       .state('registrarEntierro',{
         url: '/registrarEntierro',
-        templateUrl: './components/entierros/registroEntierro.view.html',
+        templateUrl: './components/entierros/registroEntierro/registroEntierro.view.html',
           resolve: {
             load: ['$ocLazyLoad', ($ocLazyLoad) => {
-              return $ocLazyLoad.load('./components/entierros/registrarEntierro/registroEntierro.controller.js')
+              return $ocLazyLoad.load('./components/entierros/registroEntierro/registroEntierro.controller.js')
             }]
           },
           data:{
@@ -96,7 +96,7 @@
           params: {
             objEntierro: ''
           },
-          controller: 'controladorRegistrarEntierro',
+          controller: 'controladorRegistroEntierro',
           controllerAs: 'vm'
           
       });

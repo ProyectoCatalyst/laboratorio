@@ -92,7 +92,7 @@
 
   function _agregarEntierro(aIDCliente){
 
-    let todosEntierros = _retornarEntierros(); 
+    let todosLosDifuntos = _retornarDifuntos(); 
     let registroExitoso = false;
 
     for(let i = 0; i< todosLosDifuntos.length; i++){
