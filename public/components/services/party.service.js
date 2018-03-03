@@ -27,9 +27,9 @@
     function _agregarFiestas(pfiestaNueva) {
 
       let listaFiestas = _retornarFiesta();
-      let costoFiesta = calcularCostoFiesta(pfiestaNueva.horas,pfiestaNueva.pilar,pfiestaNueva.andrey);
+      let costoFiesta = calcularCostoFiesta(pfiestaNueva.horas,pfiestaNueva.pilar,pfiestaNueva.andrey,pfiestaNueva.pago);
       listaFiestas.push(pfiestaNueva);
-      alert(costoFiesta);
+      pfiestaNueva.costoTotal=costoFiesta;
         localStorage.setItem('listaFiestasLS',JSON.stringify(listaFiestas));
       }
 
@@ -42,7 +42,7 @@
         }else{
           listaFiestasLocal.forEach(obj => {
             
-            let objFiestas = new Fiesta(obj.fecha,obj.horas,obj.pilar,obj.andrey);
+            let objFiestas = new Fiesta(obj.fecha,obj.horas,obj.pilar,obj.andrey,obj.pago);
             listaFiestas.push(objFiestas);
           })
         }
@@ -52,10 +52,10 @@
   
 
 
-      function calcularCostoFiesta(horas,pilar,andrey){
+      function calcularCostoFiesta(horas,pilar,andrey,pago){
         let costoPilar;
         let costoAndrey;
-
+        let tipoPago = pago;
 
         if(pilar == true){
           costoPilar = 30;
@@ -70,7 +70,17 @@
         }
       
       let costoTotal = (65 * horas) + (costoPilar * horas) + (costoAndrey * horas);   
-       
+
+       switch(tipoPago){
+         case "efectivo":
+         let descuento = 6 * costoTotal / 100;
+         costoTotal = costoTotal - descuento;
+         break;
+         case "tarjeta":
+         break
+       }
+
+
       return costoTotal; 
       }
 

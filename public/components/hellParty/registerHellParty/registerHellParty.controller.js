@@ -17,8 +17,10 @@
       console.log(pfiestaNueva);
       let objNuevoFiesta = new Fiesta (pfiestaNueva.fecha, pfiestaNueva.costoHora,
       pfiestaNueva.pilar,
-      pfiestaNueva.andrey
-      );
+      pfiestaNueva.andrey,
+      pfiestaNueva.tipoPagoFiesta,
+      0
+    );
 
       console.log('objeto con fiesta');
       console.log(objNuevoFiesta);
@@ -26,7 +28,7 @@
       servicioFiesta.agregarFiestas(objNuevoFiesta);
         swal({
           title: "Registro exitoso",
-          text: "Fiesta registrado correctamente",
+          text: "Se ha registrado una fiesta nuevanEl dia  la duración será de "+pfiestaNueva.costoHora+" horas y el costo es de: "+pfiestaNueva.costoTotal,
           icon: "success",
           button: "Aceptar"
         });
