@@ -15,7 +15,11 @@
     vm.listarUsuarios = servicioUsuarios.retornarUsuario();
 
     vm.agregarDifunto = (puser) => {
+
       $state.go('registerUndead', { objUsuario : JSON.stringify(puser)});
+
+      console.log(objUsuario) // si tiene info
+      
     };
 
     function listarUsuarios() {

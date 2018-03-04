@@ -9,7 +9,7 @@
   function controladorRegistrarUndead(servicioUsuarios, $stateParams, $state) {
     let vm = this;
 
-    let objSinFormatoUsuario = JSON.parse($stateParams.objUsuario);
+    let objSinFormatoUsuario = JSON.parse($stateParams.objUsuario); // usuario que debo enviar para poder agregar un difunto
 
     vm.undeadNuevo = {};
 

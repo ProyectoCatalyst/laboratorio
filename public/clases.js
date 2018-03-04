@@ -64,6 +64,7 @@ class Difunto {
     this.edad = pedad;
     this.genero = pgenero;
     this.tamanno = ptamanno;
+    this.compra = [];
   }
   
   getCedula() {
@@ -72,5 +73,9 @@ class Difunto {
 
   setDifunto(pnuevoDifunto) {
     this.difuntos.push(pnuevoDifunto);
+  }
+
+  getCompras(){
+    return this.compra;
   }
 }

@@ -5,9 +5,9 @@
   .module('laboratorio')
   .controller('controladorElegirRetoques', controladorElegirRetoques);
 
-  controladorElegirRetoques.$inject = ['$state', 'servicioRetoques'];
+  controladorElegirRetoques.$inject = ['$state', '$stateParams', 'servicioRetoques', 'servicioUsuarios'];
 
-  function controladorElegirRetoques($state, servicioRetoques){
+  function controladorElegirRetoques($state, stateParams, servicioRetoques, servicioUsuarios){
     let vm = this;
 
     vm.mostrarretoques = servicioRetoques.getRetoques(); // mostrar retoques en la vista
@@ -16,9 +16,12 @@
 
     vm.agregarretoques = (pretoques) => {
       let objCompra = new Compra (pretoques.nombre, pretoques.precio),
-          listaCompra = servicioRetoques.getCompra();
+          // listaCompra = servicioRetoques.getCompra(),
+          listaUsuarios = servicioUsuarios.retornarUsuario(), // me retorna el usuario completo junto con su compra
+          difunto = JSON.parse($stateParams.objDifunto), // obtener difunto al que acabo de dar click para agregar un retoque.
+          objDifunto = new Difunto (difunto.apodo, difunto.edad, difunto.genero, difunto.tamanno, difunto.compra);
 
-      let agregarCompra = compraExistente(objCompra, listaCompra);
+      let agregarCompra = compraExistente(objCompra, objDifunto);
 
       // console.log(objCompra);
 
@@ -29,7 +32,7 @@
 
         $state.reload()
         
-        servicioRetoques.addCompra(objCompra)
+        servicioRetoques.addCompra(objCompra, objDifunto) // enviar difunto con el que estoy trabajando y compra nueva
 
         // mostrarPrecios(objCompra.precio); // funcion que va a mostrar los precios para sumarlos
       }else{
@@ -47,7 +50,8 @@
       $state.reload()
     }
 
-    function compraExistente(pobjCompra, listaCompra){
+    function compraExistente(pobjCompra, difunto){
+      let listaCompras = difunto.getCompras(); // lamar funcion que va a retornar las compras asociadas a ese difunto
       let repetido = false
       for (let i = 0; i<listaCompra.length; i++){
         if(listaCompra[i].getNombre() === pobjCompra.nombre){

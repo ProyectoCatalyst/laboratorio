@@ -4,9 +4,9 @@
   .module('laboratorio')
   .service('servicioRetoques', servicioRetoques);
 
-  servicioRetoques.$inject = ['$log', '$http'];
+  servicioRetoques.$inject = ['$log', '$http', 'servicioUsuarios'];
 
-  function servicioRetoques($log, $http){
+  function servicioRetoques($log, $http, servicioUsuarios){
     
     let publicAPI = {
       addRetoques: _addRetoques,
@@ -85,10 +85,14 @@
 
     }
 
-    function _addCompra(pobjCompra){
-      let listaCompra = _getCompra();
-      listaCompra.push(pobjCompra);
-      localStorage.setItem('compraLS', JSON.stringify(listaCompra));
+    function _addCompra(pobjCompra, pobjDifunto){
+      let listaCompra = pobjDifunto.getCompra(); // llamar nuevamente a las compras asociadas al pobjDifunto al cual acabo de acabo de hacer click para agregar la compra o servicio
+      listaCompra.push(pobjCompra); // a la lista de compras que tiene el difunto le agrego la nueva compra
+      pobjDifunto.push(listaCompra); // al difunto le agrego la lista d compras con la nueva compra
+      
+      
+      
+      // localStorage.setItem('compraLS', JSON.stringify(listaCompra));
 
       // enviar los datos a su clase de difuntos y agregar eso al objeto, 
       
