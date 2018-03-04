@@ -4,11 +4,18 @@
     .module('laboratorio')
     .controller('controladorListarUsuario', controladorListarUsuario);
 
-  controladorListarUsuario.$inject = ['$http', 'servicioUsuarios', '$state', '$stateParams'];
+  controladorListarUsuario.$inject = ['$state', '$stateParams', '$http', 'servicioUsuarios'];
 
-  function controladorListarUsuario($http, servicioUsuarios, $state, $stateParams) {
+  function controladorListarUsuario($state, $stateParams, $http, servicioUsuarios) {
 
     let vm = this;
+
+    // if(!$stateParams.objUsuarioTemp){
+    //   $state.go('login');
+    // }
+
+    // let objSinFormatoUsuario = JSON.parse($stateParams.objUsuarioTemp);
+    // console.log(objSinFormatoUsuario);
 
     listarUsuarios();
 

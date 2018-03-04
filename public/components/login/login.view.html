@@ -1,6 +1,6 @@
 <div ng-include="'./components/includes/_header.html'"></div>
-<section class="row">
-  <div class="container">
+<section class="row w-100">
+  <div class="container mt-5">
     <div class="col-md-4">
       <form ng-submit="vm.iniciarSesion(vm.usuario)" novalidate autocomplete="off">
         <div class="form-group">
@@ -13,9 +13,9 @@
           <input type="password" class="form-control" ng-model="vm.usuario.contrasenna" id="exampleInputPassword1" aria-describedby="passwordHelp">
           <small id="passwordHelp" class="form-text text-muted">Este campo es requerido</small>
         </div>
-        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-
-        <button class="btn btn-social btn-facebook" ng-click="vm.iniciarSesionFacebook()">
+        <button type="submit" class="btn btn-success mb-3">Iniciar sesión</button>
+        <button type="button" class="btn btn-danger mb-3" ng-click="vm.registrar()">Registrar</button>
+        <button type="button" class="btn btn-social btn-facebook" ng-click="vm.iniciarSesionFacebook()">
           Iniciar sesión con Facebook
         </button>
       </form>

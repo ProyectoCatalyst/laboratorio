@@ -4,9 +4,9 @@
     .module('laboratorio')
     .controller('controladorRegistrarUsuario', controladorRegistrarUsuario);
 
-  controladorRegistrarUsuario.$inject = ['$http', 'servicioUsuarios'];
+  controladorRegistrarUsuario.$inject = ['$stateParams', '$state', '$http', 'servicioUsuarios'];
 
-  function controladorRegistrarUsuario($http, servicioUsuarios) {
+  function controladorRegistrarUsuario($stateParams, $state, $http, servicioUsuarios) {
     let vm = this;
 
     vm.provincias = $http({
@@ -51,7 +51,7 @@
           icon: "success",
         });
       }
-
+      $state.go('login');
     }
   }
 })();

@@ -4,9 +4,9 @@
     .module('laboratorio')
     .controller('controladorInicioSesion', controladorInicioSesion);
 
-  controladorInicioSesion.$inject = ['$window', 'servicioUsuarios', 'authService', 'facebookService'];
+  controladorInicioSesion.$inject = ['$stateParams', '$state', '$window', 'servicioUsuarios', 'authService', 'facebookService'];
 
-  function controladorInicioSesion($window, servicioUsuarios, authService, facebookService) {
+  function controladorInicioSesion($stateParams, $state, $window, servicioUsuarios, authService, facebookService) {
     let vm = this;
 
     vm.usuario = {};
@@ -16,9 +16,10 @@
       let inicioCorrecto = authService.logIn(pusuario);
 
       if (inicioCorrecto == true){
-        swal("Good job!", "You clicked the button!", "success");
+        swal("Correcto!", "Redirigiendo", "success");
+        $state.go('listUsers', {objUsuarioTemp: JSON.stringify(pusuario)});
       }else{
-        swal("Good job!", "You clicked the button!", "error");
+        swal("Error!", "Datos erroneos", "error");
       }
     }
 
@@ -30,6 +31,10 @@
         xfbml: true,
         version: 'v2.12'
       });
+    }
+
+    vm.registrar = () => {
+      $state.go('register');
     }
   }
 })();

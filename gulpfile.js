@@ -40,7 +40,7 @@ gulp.task('dependencies', () => {
     './node_modules/bootstrap/dist/css/bootstrap.min.css',
     './node_modules/bootstrap-social/bootstrap-social.css',
     './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/popper.js/dist/umd/popper.js'
+    './node_modules/popper.js/dist/umd/popper.min.js'
   ])
     .pipe(gulp.dest('./public/lib/bootstrap'));
   gulp.src([

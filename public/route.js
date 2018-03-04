@@ -60,6 +60,9 @@
         data:{
           pageTitle: 'Listar usuarios | Laboratorio 1'
         },
+        params: {
+          objUsuarioTemp: ''
+        },
         controller: 'controladorListarUsuario',
         controllerAs: 'vm'
       })
