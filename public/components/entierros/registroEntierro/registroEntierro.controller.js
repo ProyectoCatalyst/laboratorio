@@ -4,28 +4,27 @@
   .module('laboratorio')
   .controller('controladorRegistroEntierro', controladorRegistroEntierro);
   
-  controladorRegistroEntierro.$inject = ['$stateParams','servicioUsuarios'];
+  controladorRegistroEntierro.$inject = ['$stateParams', '$state', 'servicioUsuarios'];
 
-  function controladorRegistroEntierro ($stateParams, servicioUsuarios){
+  function controladorRegistroEntierro ($stateParams, $state, servicioUsuarios){
     let vm = this;
 
-    console.log($stateParams);
+    if(!$stateParams.objDifunto){
+      $state.go('listUsers');
+    }
 
-    let objsinFormatoEntierro = JSON.parse($stateParams.objEntierroTem);
+    let objsinFormatoDifunto = JSON.parse($stateParams.objDifunto);
     
     vm.nuevoEntierro = {};
-    console.log(objSinFormatoEntierro );
+    console.log(objsinFormatoDifunto);
 
     vm.registrarEntierro = (pnuevoEntierro)=>{
 
-
-/*Preguntar*/
-
-      let objEntierroTem = new Entierro (objsinFormatoEntierro.horaInicio, objsinFormatoEntierro.horaFinal, objsinFormatoEntierro.lugar, objsinFormatoEntierro.prioridad, pEntierroNuevo.setIDcliente(objUsuarioTem.getIDUsuaruo()));
+      let objEntierroTem = new Entierro (pnuevoEntierro.horaInicio, pnuevoEntierro.horaFinal, pnuevoEntierro.lugar, pnuevoEntierro.prioridad);
  
       let objNuevoUndead = new Difunto (pUndeadNuevo.apodo, pUndeadNuevo.genero, pUndeadNuevo.edad, pUndeadNuevo.tamanno,);
 
-      let aDifuntos= ['objNuevoUndead', 'objEntierroTem'];
+      let aDifuntos= [objNuevoUndead, objEntierroTem];
 
       console.log(Difuntos); 
       console.log(Entierros); 

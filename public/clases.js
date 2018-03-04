@@ -14,9 +14,7 @@ class Usuario {
     this.correo = pcorreo;
     this.contrasenna = pcontrasenna;
     this.difuntos = [];
-    
   }
-
 
   getNombreCompleto() {
     return `${this.nombre} ${this.primerApellido} ${this.segundoApellido}`;
@@ -38,27 +36,18 @@ class Usuario {
     return this.cedula;
   }
 
-}
-
-class Entierro {
-  constructor (phoraInicio, phoraFinal, pfecha, plugar, pprioridad){
-    this.horaInicio = phoraInicio;
-    this.horaFinal = phoraFinal;
-    this.fecha = pfecha;
-    this.lugar = plugar; 
-    this.prioridad = pprioridad;
+  getFecha(){
+    return `${this.fecha.getDay()}/${this.fecha.getMonth()}/${this.fecha.getYear()}`
   }
 
-
-  setEntierro(pnuevoEntierro){
-    this.entierro.push(pnuevoEntierro);
+  getDifuntos(){
+    return this.difuntos;
   }
-
- 
 
   setDifunto(pnuevoDifunto) {
     this.difuntos.push(pnuevoDifunto);
   }
+
 }
 
 class Difunto {
@@ -68,9 +57,24 @@ class Difunto {
     this.genero = pgenero;
     this.tamanno = ptamanno;
     this.clienteID = '';
+    this.entierro = '';
   }
 
-  setClienteID(pIDCliente){
-     this.difunto = pIDCliente;
+  setEntierro(pnuevoEntierro){
+    this.entierro = pnuevoEntierro;
+  }
+
+  setCedulaCliente(pCedulaCliente){
+     this.clienteID = pCedulaCliente;
+  }
+}
+
+class Entierro {
+  constructor (phoraInicio, phoraFinal, pfecha, plugar, pprioridad){
+    this.horaInicio = phoraInicio;
+    this.horaFinal = phoraFinal;
+    this.fecha = pfecha;
+    this.lugar = plugar; 
+    this.prioridad = pprioridad;
   }
 }

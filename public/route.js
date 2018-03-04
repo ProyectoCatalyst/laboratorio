@@ -34,7 +34,7 @@
         controllerAs: 'vm'
       })
 
-      .state('register', {
+      .state('registroUsuarios', {
         url: '/registerUsers',
         templateUrl: './components/users/registerUsers/registerUsers.view.html',
         resolve: {
@@ -82,6 +82,24 @@
         controllerAs: 'vm'
       })
 
+      .state('listUndead', {
+        url: '/listUndead',
+        templateUrl: './components/undead/listUndead/listUndead.view.html',
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/undead/listUndead/listUndead.controller.js')
+          }]
+        },
+        data:{
+          pageTitle: 'Listado de difuntos | Laboratorio 1'
+        },
+        params: {
+          objUsuario: ''
+        },
+        controller: 'controladorListarUndead',
+        controllerAs: 'vm'
+      })
+
       .state('registrarEntierro',{
         url: '/registrarEntierro',
         templateUrl: './components/entierros/registroEntierro/registroEntierro.view.html',
@@ -94,7 +112,7 @@
             pageTitle: 'Registro de Entierros | Laboratorio 1'
           },
           params: {
-            objEntierro: ''
+            objDifunto: ''
           },
           controller: 'controladorRegistroEntierro',
           controllerAs: 'vm'
