@@ -4,9 +4,9 @@
     .module('laboratorio')
     .controller('controladorInicioSesion', controladorInicioSesion);
 
-  controladorInicioSesion.$inject = ['$stateParams', '$state', '$window', 'servicioUsuarios', 'authService', 'facebookService'];
+  controladorInicioSesion.$inject = ['$stateParams', '$state', '$window', 'servicioUsuarios', 'authService'];
 
-  function controladorInicioSesion($stateParams, $state, $window, servicioUsuarios, authService, facebookService) {
+  function controladorInicioSesion($stateParams, $state, $window, servicioUsuarios, authService) {
     let vm = this;
 
     vm.usuario = {};
