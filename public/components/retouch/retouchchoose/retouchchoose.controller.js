@@ -12,6 +12,7 @@
 
     vm.mostrarretoques = servicioRetoques.getRetoques(); // mostrar retoques en la vista
     vm.mostrarCompra = servicioRetoques.getCompra();
+    vm.mostrarTotal = mostrarPrecios();
 
     vm.agregarretoques = (pretoques) => {
       let objCompra = new Compra (pretoques.nombre, pretoques.precio),
@@ -29,9 +30,12 @@
         $state.reload()
         
         servicioRetoques.addCompra(objCompra)
+
+        // mostrarPrecios(objCompra.precio); // funcion que va a mostrar los precios para sumarlos
       }else{
         swal("Error", "Ya has agregado el ítem", "error");
       }
+
     }
 
 
@@ -52,6 +56,22 @@
 
       }
       return !repetido // retornar contrario
+    }
+
+    function mostrarPrecios(){
+      let compras = servicioRetoques.getCompra(),
+          listaPrecios = [],
+          total = 0;
+
+          for(let i=0; i<compras.length; i++){
+            listaPrecios.push(compras[i].precio);
+
+            total = listaPrecios[i] + total;
+          }
+
+          // console.log(total)
+
+          return total
     }
   }
 

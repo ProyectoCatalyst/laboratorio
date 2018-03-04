@@ -90,6 +90,10 @@
       listaCompra.push(pobjCompra);
       localStorage.setItem('compraLS', JSON.stringify(listaCompra));
 
+      // enviar los datos a su clase de difuntos y agregar eso al objeto, 
+      
+      //debo obtener el difunto al que acabo de hacer click y la compra que deseo agregar(parametro de esta funcion), debo enviar el difunto, y la compra que deseo agregar a una funcion que va a buscar el difunto al cual deseo agregar la compra y actualizar mediante un forEach que va a recorrer los usuarios, y los difuntos hasta encontrar el difunto al cual deseo agregar la compra y en ese punto hacer el .push
+
     }
 
     function _getCompra(){
@@ -108,14 +112,16 @@
       }
 
       return listaCompra
+
+      // trabajar con el difunto con el cual estoy accediendo para mostrar las compras asociadas a este
     }
 
     function _deleteCompra(pobjCompra){
-      let listaCompraLocal = _getCompra(),
+      let listaCompraLocal = _getCompra(), // getServcios de un difunto
           listaCompraFinal = [];
 
       for(let i=0; i<listaCompraLocal.length; i++){
-        if(listaCompraLocal[i].nombre == pobjCompra.nombre){
+        if(listaCompraLocal[i].nombre == pobjCompra.nombre){ // compras en el sistema junto con la compra que deseo eliminar, respectivamente
 
         }else{
           listaCompraFinal.push(listaCompraLocal[i])
@@ -123,6 +129,8 @@
       }
 
       actualizarListaCompras(listaCompraFinal);
+
+      // obtener la compra que deseo eliminar, y comparar eso con las compras que tiene el difunto con el cual accedi y continuar con la eliminacion
     }
 
     function actualizarListaCompras(plistaCompraFinal){

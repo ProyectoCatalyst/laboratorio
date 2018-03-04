@@ -11,7 +11,7 @@
         <h5 class="card-title col-md-6 text-center">Precio</h5>
 
         <p class="col-md-6 text-center" ng-model="vm.retoques.nombre">{{ retoques.nombre }}</p>
-        <p class="col-md-6 text-center" ng-model="vm.retoques.precio" >{{ retoques.precio }}</p>
+        <p class="col-md-6 text-center" ng-model="vm.retoques.precio" >₡{{ retoques.precio }}</p>
 
         <button type="button" class="btn btn-primary col-md-12" ng-click="vm.agregarretoques ( retoques )">Agregar al carrito</button>
       </div>
@@ -34,13 +34,15 @@
         <tbody>
           <tr ng-repeat="compras in vm.mostrarCompra">
             <td>{{compras.nombre}}</td>
-            <td>{{compras.precio}}</td>
+            <td>₡{{compras.precio}}</td>
             <td>
               <button ng-click="vm.eliminarCompra(compras)" class="btn btn-danger">Eliminar</button>
             </td>
           </tr>
         </tbody>
       </table>
+
+      <p class="font-weight-bold my-5">Total de esta compra: ₡{{vm.mostrarTotal}}</p>
   
     </div>
 
