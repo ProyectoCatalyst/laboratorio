@@ -1,17 +1,13 @@
 (() => {
   'use strict';
   angular
-  .module('laboratorio')
-  .controller('controladorRegistrarUndead', controladorRegistrarUndead);
+    .module('laboratorio')
+    .controller('controladorRegistrarUndead', controladorRegistrarUndead);
 
   controladorRegistrarUndead.$inject = ['servicioUsuarios', '$stateParams', '$state'];
 
   function controladorRegistrarUndead(servicioUsuarios, $stateParams, $state) {
     let vm = this;
-
-    if(!$stateParams.objUsuario){
-      $state.go('listUsers');
-    }
 
     let objSinFormatoUsuario = JSON.parse($stateParams.objUsuario);
 
@@ -24,8 +20,6 @@
       let objUsuarioTem = new Usuario(objSinFormatoUsuario.nombre, objSinFormatoUsuario.primerApellido, objSinFormatoUsuario.segundoApellido, objSinFormatoUsuario.cedula, objSinFormatoUsuario.fecha, objSinFormatoUsuario.genero, objSinFormatoUsuario.foto, objSinFormatoUsuario.ubicacion, objSinFormatoUsuario.privincia, objSinFormatoUsuario.canton, objSinFormatoUsuario.distrito, objSinFormatoUsuario.usuario, objSinFormatoUsuario.correo, objSinFormatoUsuario.contrasenna);
 
       let objNuevoUndead = new Difunto (pUndeadNuevo.apodo, pUndeadNuevo.genero, pUndeadNuevo.edad, pUndeadNuevo.tamanno);
-
-      objNuevoUndead.setCedulaCliente(objUsuarioTem.getCedula())
 
       let datos = [objUsuarioTem, objNuevoUndead];
 
@@ -42,6 +36,7 @@
 
         $state.go('listUsers')
       }
+
     }
   }
 })();
