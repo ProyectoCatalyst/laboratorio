@@ -55,6 +55,7 @@ class Compra {
 
   getNombre() {
     return this.nombre
+  
   }
 }
 
@@ -64,6 +65,38 @@ class Difunto {
     this.edad = pedad;
     this.genero = pgenero;
     this.tamanno = ptamanno;
+    this.clienteID = '';
+    this.entierro = '';
+  }
+
+  setEntierro(pnuevoEntierro){
+    this.entierro = pnuevoEntierro;
+  }
+
+  setCedulaCliente(pCedulaCliente){
+     this.clienteID = pCedulaCliente;
+  }
+
+  getFecha(){
+    return `${this.fecha.getDay()}/${this.fecha.getMonth()}/${this.fecha.getYear()}`
+  }
+
+  getDifuntos(){
+    return this.difuntos;
+  }
+
+  setDifunto(pnuevoDifunto) {
+    this.difuntos.push(pnuevoDifunto);
+  }
+}
+
+class Entierro {
+  constructor (phoraInicio, phoraFinal, pfecha, plugar, pprioridad){
+    this.horaInicio = phoraInicio;
+    this.horaFinal = phoraFinal;
+    this.fecha = pfecha;
+    this.lugar = plugar; 
+    this.prioridad = pprioridad;
   }
   
   getCedula() {
