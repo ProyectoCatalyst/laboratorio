@@ -1,0 +1,24 @@
+<div class="col-9">
+  <table class="table">
+    <thead>
+        <tr>
+          <th>Apodo</th>
+          <th>Edad</th>
+          <th>Genero</th>
+          <th>Tamaño</th>
+          <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="difunto in vm.listarDifuntos">
+        <td>{{difunto.apodo}}</td>
+        <td>{{difunto.edad}}</td>
+        <td>{{difunto.genero}}</td>
+        <td>{{difunto.tamanno}}</td>
+        <td>
+          <button class="btn btn-secondary" type="button" ng-click="vm.agregarEntierro(difunto)">Agregar Entierro</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
