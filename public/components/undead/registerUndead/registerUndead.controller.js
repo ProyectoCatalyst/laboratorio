@@ -4,9 +4,15 @@
     .module('laboratorio')
     .controller('controladorRegistrarUndead', controladorRegistrarUndead);
 
+<<<<<<< HEAD
   controladorRegistrarUndead.$inject = ['servicioUsuarios', '$stateParams', '$state'];
 
   function controladorRegistrarUndead(servicioUsuarios, $stateParams, $state) {
+=======
+  controladorRegistrarUndead.$inject = ['$stateParams', '$state', 'servicioUsuarios'];
+
+  function controladorRegistrarUndead($stateParams, $state, servicioUsuarios) {
+>>>>>>> master
     let vm = this;
 
     let objSinFormatoUsuario = JSON.parse($stateParams.objUsuario); // usuario que debo enviar para poder agregar un difunto

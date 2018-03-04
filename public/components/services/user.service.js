@@ -24,7 +24,9 @@
       agregarUsuario: _agregarUsuario,
       retornarUsuario: _retornarUsuario,
       agregarDifunto: _agregarDifunto,
-      retornarDifunto: _retornarDifunto
+      retornarDifunto: _retornarDifunto,
+      agregarEntierro: _agregarEntierro,
+      retornarEntierro: _retornarEntierro
     };
     return publicAPI;
 
@@ -78,12 +80,10 @@
           registroExitoso = true;
         }
       }
-
       actualizarLista(todosLosUsuarios);
-
       return registroExitoso;
-      
     }
+<<<<<<< HEAD
   }
 
   function actualizarLista(listaActualizada){
@@ -91,3 +91,61 @@
   }
   
 })();
+=======
+    function _retornarDifunto(pidusuario) {
+      let todosLosUsuarios = _retornarUsuario();
+      let todosLosDifuntos = [];
+      
+      for(let i = 0; i < todosLosUsuarios.length; i++){
+        if(pidusuario == todosLosUsuarios[i].getCedula()){
+          todosLosDifuntos = todosLosUsuarios[i].getDifuntos();
+        }
+      }
+      return todosLosDifuntos;
+    }
+    function _agregarEntierro(aIDCliente){
+      let todosLosDifuntos = _retornarDifuntos(); 
+      let registroExitoso = false;
+
+      for(let i = 0; i< todosLosDifuntos.length; i++){
+        if (aDifuntos[0].getIDCliente() === todosLosDifuntos[i].getIDCliente()){
+          todosLosDifuntos[i].setEntierro(aDifuntos[1]);
+          registroExitoso = true;
+        }
+      }
+      todosEntierros.push(pnuevoEntierro);
+      asyncLocalStorage.setItem ('listaEntierrosLS', todosEntierros).then((respuesta) =>{
+        registroExitoso = respuesta;
+      });
+
+      return registroExitoso;
+    } 
+
+
+//aquí//
+
+
+    function _retornarEntierro(pnuevoEntierro){
+      let todosEntierros = [];
+
+      listaEntierros = JSON.parse(localStorage.getItem('listaEntierrosLS'));
+      
+      if (listaEntierros == null) {
+        return todosEntierros;
+
+      } else {
+        listaEntierros.forEach(obj => {
+          let EntierroTemp = new Entierro (obj.horaInicio, obj.horaFinal, obj.fecha, obj.lugar, obj. prioridad);
+
+          todosEntierros.push(objEntierroTemp);
+        });
+      }
+      return todosEntierros;
+    }
+
+    function actualizarLista(listaActualizada){
+      localStorage.setItem('listaUsuariosLS', JSON.stringify(listaActualizada));
+    }
+  }   
+})(); 
+>>>>>>> master

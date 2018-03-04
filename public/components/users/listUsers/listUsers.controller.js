@@ -22,6 +22,8 @@
       
     };
 
+    
+
     function listarUsuarios() {
       vm.listaUsuarios = servicioUsuarios.retornarUsuario();
     }
