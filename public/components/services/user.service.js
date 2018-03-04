@@ -30,22 +30,23 @@
 
       let todosLosUsuarios = _retornarUsuario();
       let registroExitoso = true;
-
       todosLosUsuarios.push(pusuario);
 
       asyncLocalStorage.setItem('listaUsuariosLS', todosLosUsuarios).then((result) => {
         registroExitoso = result
       });
 
+      console.log(pusuario);
+
       return registroExitoso;
     }
 
     function _retornarDifunto() {
       let listaUsuario = _retornarUsuario(),
-          objUsuarioTem = new Usuario(listaUsuario.nombre, listaUsuario.primerApellido, listaUsuario.segundoApellido, listaUsuario.cedula, listaUsuario.fecha, listaUsuario.genero, listaUsuario.foto, listaUsuario.ubicacion, listaUsuario.privincia, listaUsuario.canton, listaUsuario.distrito, listaUsuario.usuario, listaUsuario.correo, listaUsuario.contrasenna, listaUsuario.difuntos),
+          objUsuarioTem = new Usuario(listaUsuario.nombre, listaUsuario.primerApellido, listaUsuario.segundoApellido, listaUsuario.cedula, listaUsuario.fecha, listaUsuario.genero, listaUsuario.foto, listaUsuario.ubicacion, listaUsuario.canton, listaUsuario.distrito, listaUsuario.usuario, listaUsuario.correo, listaUsuario.contrasenna, listaUsuario.difuntos),
           listaDifuntos = objUsuarioTem.difuntos;
 
-          console.log(listaUsuario); 
+          // console.log(listaUsuario); 
     }
 
     function _retornarUsuario() {
@@ -59,16 +60,18 @@
 
       } else {
 
-        // console.log(listaUsuarios)
+        // console.log(listaUsuarios[0].difuntos)
         listaUsuarios.forEach(obj => {
 
-          let objUsuarioTemp = new Usuario(obj.nombre, obj.primerApellido, obj.segundoApellido, obj.cedula, obj.fecha, obj.genero, obj.foto, obj.ubicacion, obj.provincia, obj.canton, obj.distrito, obj.usuario, obj.correo, obj.contrasenna); // si lo guarda pero en posicion diferente
+          let objUsuarioTemp = new Usuario(obj.nombre, obj.primerApellido, obj.segundoApellido, obj.cedula, obj.fecha, obj.genero, obj.foto, obj.ubicacion, obj.canton, obj.distrito, obj.usuario, obj.correo, obj.contrasenna, obj.difuntos); // si lo guarda pero en posicion diferente
 
           todosLosUsuarios.push(objUsuarioTemp);
+
         });
       }
+          console.log(todosLosUsuarios)
+          console.log(listaUsuarios)
 
-      console.log(todosLosUsuarios)
       return todosLosUsuarios;
     }
 

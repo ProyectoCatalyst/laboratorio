@@ -1,5 +1,5 @@
 class Usuario {
-  constructor(pnombre, pprimerApellido, psegundoApellido, pcedula, pfecha, pgenero, pfoto, pubicacion, pprovincia, pcanton, pdistrito, pusuario, pcorreo, pcontrasenna) {
+  constructor(pnombre, pprimerApellido, psegundoApellido, pcedula, pfecha, pgenero, pfoto, pubicacion, pcanton, pdistrito, pusuario, pcorreo, pcontrasenna) {
     this.nombre = pnombre;
     this.primerApellido = pprimerApellido;
     this.segundoApellido = psegundoApellido;
@@ -8,6 +8,7 @@ class Usuario {
     this.genero = pgenero;
     this.foto = pfoto;
     this.ubicacion = pubicacion;
+    // this.provincia = pprovincia;
     this.canton = pcanton;
     this.distrito = pdistrito;
     this.usuario = pusuario;
