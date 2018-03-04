@@ -22,6 +22,8 @@
       $state.go('listUndead', {objUsuario : JSON.stringify(puser)});
     };
 
+    
+
     function listarUsuarios() {
       vm.listaUsuarios = servicioUsuarios.retornarUsuario();
     }

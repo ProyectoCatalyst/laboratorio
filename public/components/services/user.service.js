@@ -22,7 +22,9 @@
       agregarUsuario: _agregarUsuario,
       retornarUsuario: _retornarUsuario,
       agregarDifunto: _agregarDifunto,
-      retornarDifunto: _retornarDifunto
+      retornarDifunto: _retornarDifunto,
+      agregarEntierro: _agregarEntierro,
+      retornarEntierro: _retornarEntierro
     };
     return publicAPI;
 
@@ -76,13 +78,9 @@
           registroExitoso = true;
         }
       }
-
       actualizarLista(todosLosUsuarios);
-
       return registroExitoso;
-      
     }
-
     function _retornarDifunto(pidusuario) {
       let todosLosUsuarios = _retornarUsuario();
       let todosLosDifuntos = [];
@@ -92,11 +90,8 @@
           todosLosDifuntos = todosLosUsuarios[i].getDifuntos();
         }
       }
-
       return todosLosDifuntos;
-
     }
-
     function _agregarEntierro(aIDCliente){
       let todosLosDifuntos = _retornarDifuntos(); 
       let registroExitoso = false;
@@ -107,8 +102,6 @@
           registroExitoso = true;
         }
       }
-
-
       todosEntierros.push(pnuevoEntierro);
       asyncLocalStorage.setItem ('listaEntierrosLS', todosEntierros).then((respuesta) =>{
         registroExitoso = respuesta;
@@ -117,7 +110,11 @@
       return registroExitoso;
     } 
 
-    function _retornarEntierro(){
+
+//aquí//
+
+
+    function _retornarEntierro(pnuevoEntierro){
       let todosEntierros = [];
 
       listaEntierros = JSON.parse(localStorage.getItem('listaEntierrosLS'));

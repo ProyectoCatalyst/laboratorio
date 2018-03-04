@@ -22,7 +22,7 @@
 
       let objEntierroTem = new Entierro (pnuevoEntierro.horaInicio, pnuevoEntierro.horaFinal, pnuevoEntierro.lugar, pnuevoEntierro.prioridad);
  
-      let objNuevoUndead = new Difunto (pUndeadNuevo.apodo, pUndeadNuevo.genero, pUndeadNuevo.edad, pUndeadNuevo.tamanno,);
+      let objNuevoUndead = new Difunto (objsinFormatoDifunto.apodo, objsinFormatoDifunto.genero, objsinFormatoDifunto.edad, objsinFormatoDifunto.tamanno);
 
       let aDifuntos= [objNuevoUndead, objEntierroTem];
 

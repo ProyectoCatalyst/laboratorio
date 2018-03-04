@@ -10,7 +10,7 @@
     let vm = this;
 
     if(!$stateParams.objUsuario){
-      $state.go('listUsers');
+      $state.go('listUsers'); 
     }
 
     let objSinFormatoUsuario = JSON.parse($stateParams.objUsuario);
