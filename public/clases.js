@@ -1,18 +1,17 @@
 class Usuario {
-  constructor(pnombre, pprimerApellido, psegundoApellido, pcedula, pfecha, pgenero, pfoto, pubicacion, pprovincia, pcanton, pdistrito, pusuario, pcorreo, pcontrasenna) {
+  constructor(pcedula, pnombre, pprimerApellido, psegundoApellido, pgenero, pprovincia, pcanton, pdistrito, pusuario, pcorreo, pcontrasenna, pfecha, ) {
+    this.cedula = pcedula;
     this.nombre = pnombre;
     this.primerApellido = pprimerApellido;
     this.segundoApellido = psegundoApellido;
-    this.cedula = pcedula;
-    this.fecha = pfecha;
     this.genero = pgenero;
-    this.foto = pfoto;
-    this.ubicacion = pubicacion;
+    this.provincia = pprovincia;
     this.canton = pcanton;
     this.distrito = pdistrito;
     this.usuario = pusuario;
     this.correo = pcorreo;
     this.contrasenna = pcontrasenna;
+    this.fecha = pfecha;
     this.difuntos = [];
   }
 

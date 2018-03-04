@@ -4,40 +4,38 @@
     <!-- <h1>Bienvenido {{vm.usuarioActivo}}</h1> -->
     <h2>Listar usuarios</h2>
     <table class="table mt-5">
-      <thead>
+      <thead class="thead-dark">
         <tr>
-          <th>Nombre</th>
-          <th>Primer apellido</th>
-          <th>Segundo apellido</th>
-          <th>Cédula</th>
+          <th scope="col">Cédula</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Primer apellido</th>
+          <th scope="col">Segundo apellido</th>  
+          <th scope="col">Genero</th>
+          <th scope="col">Provincia</th>
+          <th scope="col">Cantón</th>
+          <th scope="col">Distrito</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Correo</th>
+          <!-- <th>Contraseña</th> -->
           <th>Fecha</th>
-          <th>Genero</th>
-          <th>Foto</th>
-          <th>Ubicación</th>
-          <th>Cantón</th>
-          <th>Distrito</th>
-          <th>Usuario</th>
-          <th>Correo</th>
-          <th>Contraseña</th>
           <th>Agregar Difunto</th>
           <th>Modificar</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="usuario in vm.listarUsuarios">
+          <td>{{usuario.cedula}}</td>
           <td>{{usuario.nombre}}</td>
           <td>{{usuario.primerApellido}}</td>
           <td>{{usuario.segundoApellido}}</td>
-          <td>{{usuario.cedula}}</td>
-          <td>{{usuario.fecha}}</td>
           <td>{{usuario.genero}}</td>
-          <td>{{usuario.foto}}</td>
-          <td>{{usuario.ubicacion}}</td>
+          <td>{{usuario.provincia}}</td>
           <td>{{usuario.canton}}</td>
           <td>{{usuario.distrito}}</td>
           <td>{{usuario.usuario}}</td>
           <td>{{usuario.correo}}</td>
-          <td>{{usuario.contrasenna}}</td>
+          <!-- <td>{{usuario.contrasenna}}</td> -->
+          <td>{{usuario.fecha | date:'dd-MM-yyyy'}}</td>
           <td>
             <button class="btn btn-primary" type="button" ng-click="vm.agregarDifunto(usuario)">Agregar Difunto</button>
           </td>

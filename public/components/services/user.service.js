@@ -4,17 +4,17 @@
     .module('laboratorio')
     .service('servicioUsuarios', servicioUsuarios);
 
-  servicioUsuarios.$inject = ['$q', '$log', '$http']; 
-  
+  servicioUsuarios.$inject = ['$q', '$log', '$http'];
+
   function servicioUsuarios($q, $log, $http) {
 
     const asyncLocalStorage = {
       setItem: function (key, value) {
-          return Promise.resolve().then(() => {
-              let response = true;
-              localStorage.setItem(key, JSON.stringify(value));
-              return response
-          });
+        return Promise.resolve().then(() => {
+          let response = true;
+          localStorage.setItem(key, JSON.stringify(value));
+          return response
+        });
       }
     }
 
@@ -41,8 +41,8 @@
     }
 
     function _retornarDifunto(pusuario) {
-        
-      
+
+
     }
 
     function _retornarUsuario() {
@@ -58,7 +58,7 @@
 
         listaUsuarios.forEach(obj => {
 
-          let objUsuarioTemp = new Usuario(obj.nombre, obj.primerApellido, obj.segundoApellido, obj.cedula, obj.fecha, obj.genero, obj.foto, obj.ubicacion, obj.provincia, obj.canton, obj.distrito, obj.usuario, obj.correo, obj.contrasenna);
+          let objUsuarioTemp = new Usuario(obj.cedula, obj.nombre, obj.primerApellido, obj.segundoApellido, obj.genero, obj.provincia, obj.canton, obj.distrito, obj.usuario, obj.correo, obj.contrasenna, obj.fecha);
 
           todosLosUsuarios.push(objUsuarioTemp);
         });
@@ -66,12 +66,12 @@
       return todosLosUsuarios;
     }
 
-    function _agregarDifunto(aDatos){
+    function _agregarDifunto(aDatos) {
       let todosLosUsuarios = _retornarUsuario();
       let registroExitoso = false;
 
-      for(let i = 0; i < todosLosUsuarios.length; i++){
-        if(aDatos[0].getCedula() === todosLosUsuarios[i].getCedula()){
+      for (let i = 0; i < todosLosUsuarios.length; i++) {
+        if (aDatos[0].getCedula() === todosLosUsuarios[i].getCedula()) {
           todosLosUsuarios[i].setDifunto(aDatos[1]);
           registroExitoso = true;
         }
@@ -80,12 +80,12 @@
       actualizarLista(todosLosUsuarios);
 
       return registroExitoso;
-      
+
     }
   }
 
-  function actualizarLista(listaActualizada){
+  function actualizarLista(listaActualizada) {
     localStorage.setItem('listaUsuariosLS', JSON.stringify(listaActualizada));
   }
-  
+
 })();
