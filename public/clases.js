@@ -38,11 +38,14 @@ class Animador{
     this.nombreAnimador = pnombreAnimador;
     this.costoAnimador = pcostoAnimador;
   }
-  getCostoAnimador(){
-  return this.costoAnimador;
-  }
-
   getCodigoAnimador(){
     return this.codigoAnimador;
+  }
+  getNombreAnimador(){
+    return this.nombreAnimador;
+  }
+
+  getCostoAnimador(){
+    return this.costoAnimador;
   }
 }

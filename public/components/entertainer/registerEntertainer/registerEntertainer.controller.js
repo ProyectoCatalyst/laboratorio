@@ -10,7 +10,7 @@
     let vm = this;
 
     vm.AnimadorNuevo = {};
-    vm.listaAnimadores = listarAnimadores();
+    vm.listaAnimadores = servicioAnimadores.retornarAnimador();
 
     listarAnimadores();
     vm.registrarAnimador = (panimadorNuevo) => {
@@ -48,10 +48,9 @@
         vm.listaAnimadores = servicioAnimadores.retornarAnimador(); 
       }
 
-
-      vm.editarAnimador = (panimador)=>{
-      $state.go('editarAnimador', { objAnimadorTemp : JSON.stringify(panimador)});
-      }
+      vm.actualizarAnimador = (panimador)=>{
+        $state.go('updateEntertainer',{objAnimador :JSON.stringify(panimador)});
+        }
     }
 
 })();

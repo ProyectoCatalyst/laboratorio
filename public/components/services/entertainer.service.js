@@ -20,7 +20,10 @@
 
     let publicAPI = {
       agregarAnimador: _agregarAnimador,
-      retornarAnimador: _retornarAnimador
+      retornarAnimador: _retornarAnimador,
+      actualizarAnimador: _actualizarAnimador,
+      eliminarAnimador: _eliminarAnimador
+    
     }
     return publicAPI;
 
@@ -53,6 +56,7 @@
         listaAnimadoresLocal.forEach(obj => {
           
           let objAnimadores = new Animador(obj.codigoAnimador,obj.nombreAnimador,obj.costoAnimador);
+          
           listaAnimadores.push(objAnimadores);
         })
       }
@@ -60,8 +64,32 @@
       return listaAnimadores;
     }
   
+
+
+
+    function _actualizarAnimador(panimadorActulizar){
+      let listaAnimadores = _retornarAnimador(),
+          valido = false;
+
+      for(let i =0; i < listaAnimadores.length; i++){
+        if(panimadorActulizar.getCodigoAnimador() == listaAnimadores[i].getCodigoAnimador()){
+          listaAnimadores[i] = panimadorActulizar;
+          valido = true;
+        }
+      }
+
+      actualizarLocal(listaAnimadores);
+
+      return valido;
+    }
+
+    function _eliminarAnimador(panimadorEliminar){
+
+    }
+
     function actualizarLocal(plistaActualizada){
       localStorage.setItem('listaAnimadoresLS', JSON.stringify(plistaActualizada));
     }
+    
   }
 })();

@@ -11,92 +11,111 @@
   function routing($stateProvider, $urlRouterProvider, $ocLazyLoad) {
 
     $stateProvider
-      .state('landingPage', {
-        url: '/',
-        templateUrl: './components/landingPage/landingPage.view.html',
-        data:{
-          pageTitle: 'Inicio | Laboratorio 1'
-        }
-      })
+    .state('landingPage', {
+      url: '/',
+      templateUrl: './components/landingPage/landingPage.view.html',
+      data:{
+        pageTitle: 'Inicio | Laboratorio 1'
+      }
+    })
 
-      .state('login', {
-        url: '/login',
-        templateUrl: './components/login/login.view.html',
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/login/login.controller.js')
-          }]
-        },
-        data:{
-          pageTitle: 'Inicio de sesión | Laboratorio 1'
-        },
-        controller: 'controladorInicioSesion',
-        controllerAs: 'vm'
-      })
+    .state('login', {
+      url: '/login',
+      templateUrl: './components/login/login.view.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/login/login.controller.js')
+        }]
+      },
+      data:{
+        pageTitle: 'Inicio de sesión | Laboratorio 1'
+      },
+      controller: 'controladorInicioSesion',
+      controllerAs: 'vm'
+    })
 
-      .state('register', {
-        url: '/registerUsers',
-        templateUrl: './components/users/registerUsers/registerUsers.view.html',
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/users/registerUsers/registerUsers.controller.js')
-          }]
-        },
-        data:{
-          pageTitle: 'Registro de usuarios | Laboratorio 1'
-        },
-        controller: 'controladorRegistrarUsuario',
-        controllerAs: 'vm'
-      })
+    .state('register', {
+      url: '/registerUsers',
+      templateUrl: './components/users/registerUsers/registerUsers.view.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/users/registerUsers/registerUsers.controller.js')
+        }]
+      },
+      data:{
+        pageTitle: 'Registro de usuarios | Laboratorio 1'
+      },
+      controller: 'controladorRegistrarUsuario',
+      controllerAs: 'vm'
+    })
 
-      .state('listUsers', {
-        url: '/listUsers',
-        templateUrl: './components/users/listUsers/listUsers.html',
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/users/listUsers/listUsers.controller.js')
-          }]
-        },
-        data:{
-          pageTitle: 'Listar usuarios | Laboratorio 1'
-        },
-        controller: 'controladorListarUsuario',
-        controllerAs: 'vm'
-      })
+    .state('listUsers', {
+      url: '/listUsers',
+      templateUrl: './components/users/listUsers/listUsers.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/users/listUsers/listUsers.controller.js')
+        }]
+      },
+      data:{
+        pageTitle: 'Listar usuarios | Laboratorio 1'
+      },
+      controller: 'controladorListarUsuario',
+      controllerAs: 'vm'
+    })
       
-      .state('registerUndead', {
-        url: '/registerUndead',
-        templateUrl: './components/undead/registerUndead/registerUndead.view.html',
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/undead/registerUndead/registerUndead.controller.js')
-          }]
-        },
-        data:{
-          pageTitle: 'Registro de difuntos | Laboratorio 1'
-        },
-        params: {
-          objUsuario: ''
-        },
-        controller: 'controladorRegistrarUndead',
-        controllerAs: 'vm'
-      })
+    .state('registerUndead', {
+      url: '/registerUndead',
+      templateUrl: './components/undead/registerUndead/registerUndead.view.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/undead/registerUndead/registerUndead.controller.js')
+        }]
+      },
+      data:{
+        pageTitle: 'Registro de difuntos | Laboratorio 1'
+      },
+      params: {
+        objUsuario: ''
+      },
+      controller: 'controladorRegistrarUndead',
+      controllerAs: 'vm'
+    })
       
       
-      .state('registerEntertainer', {
-        url: '/registerEntertainer',
-        templateUrl: './components/entertainer/registerEntertainer/registerEntertainer.view.html',
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/entertainer/registerEntertainer/registerEntertainer.controller.js')
-          }]
-        },
-        data:{
-          pageTitle: 'Listar animadores | Laboratorio 1'
-        },
-        controller: 'controladorRegistrarAnimador',
-        controllerAs: 'vm'
-      });
+    .state('registerEntertainer', {
+      url: '/registerEntertainer',
+      templateUrl: './components/entertainer/registerEntertainer/registerEntertainer.view.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/entertainer/registerEntertainer/registerEntertainer.controller.js')
+        }]
+      },
+      data:{
+        pageTitle: 'Listar animadores | Laboratorio 1'
+      },
+      controller: 'controladorRegistrarAnimador',
+      controllerAs: 'vm'
+    })
+    
+    
+    .state('updateEntertainer', {
+      url: '/updateEntertainer',
+      templateUrl: './components/entertainer/updateEntertainer/updateEntertainer.view.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/entertainer/updateEntertainer/updateEntertainer.controller.js')
+        }]
+      },
+      data:{
+        pageTitle: 'Listar animadores | Laboratorio 1'
+      },
+      params: {
+        objAnimador: ''
+      },
+      controller: 'controladorUpdateAnimador',
+      controllerAs: 'vm'
+    });
 
       
 

@@ -1,0 +1,30 @@
+
+<div ng-include="'./components/includes/_header.html'"></div>
+
+<main>
+  <section>
+    <h1>Animador: {{vm.animadorActivo}}</h1>
+
+    <div class="col-4">
+      <form ng-submit="vm.actualizarAnimador(vm.AnimadorMod)">
+
+        <div class="form-group">
+          <label for="txtNombreAnimador">Nombre: </label>
+          <input type="text" class="form-control" ng-model="vm.AnimadorMod.nombreAnimador" id="txtNombreAnimador" required>
+        </div>
+
+        <div class="form-group">
+          <label for="txtCostoAnimador">Costo por hora:</label>
+          <input type="number" class="form-control" ng-model="vm.AnimadorMod.costoAnimador" id="txtCostoAnimador" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Actualizar Animador</button>
+
+        <button type="button" class="btn btn-danger" ng-click="vm.eliminarAnimador(vm.AnimadorMod)">Eliminar animador</button>
+
+        <button type="button" class="btn btn-secondary" ng-click="vm.regresar()">Regresar</button>
+
+      </form>
+    </div>
+  </section>
+</main>
