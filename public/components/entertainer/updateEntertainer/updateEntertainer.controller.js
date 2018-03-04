@@ -53,6 +53,23 @@
 
     vm.eliminarAnimador = (panimadorEliminar) => {
       console.log(panimadorEliminar);
+
+      let objAnimadorFormato = new Animador (panimadorEliminar.codigoAnimador, panimadorEliminar.nombreAnimador, panimadorEliminar.costoAnimador);
+
+      let deleteValido = servicioAnimadores.eliminarAnimador(objAnimadorFormato);
+
+      if(deleteValido == true){
+        swal({
+          title: "Eliminación exitoso",
+          text: "Animador eliminado correctamente",
+          icon: "success",
+          button: "Aceptar"
+        });
+
+        $state.go('registerEntertainer');
+      }
+      vm.AnimadorNuevo = null;
+      listarAnimadores();
     }
 
     function listarAnimadores(){

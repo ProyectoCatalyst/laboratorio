@@ -84,7 +84,17 @@
     }
 
     function _eliminarAnimador(panimadorEliminar){
+      let listaAnimadores = _retornarAnimador(),
+      valido = false;
 
+      for(let i =0; i < listaAnimadores.length; i++){
+        if(panimadorEliminar.getCodigoAnimador() == listaAnimadores[i].getCodigoAnimador()){
+          listaAnimadores.splice(i,1);
+          valido = true;
+        }
+      }
+      actualizarLocal(listaAnimadores);
+      return valido;
     }
 
     function actualizarLocal(plistaActualizada){
