@@ -1,5 +1,5 @@
 class Usuario {
-  constructor(pcedula, pnombre, pprimerApellido, psegundoApellido, pgenero, pprovincia, pcanton, pdistrito, pusuario, pcorreo, pcontrasenna, pfecha, ) {
+  constructor(pcedula, pnombre, pprimerApellido, psegundoApellido, pgenero, pprovincia, pcanton, pdistrito, pusuario, pcorreo, pcontrasenna, pfecha) {
     this.cedula = pcedula;
     this.nombre = pnombre;
     this.primerApellido = pprimerApellido;
@@ -29,6 +29,10 @@ class Usuario {
 
   getContrasenna() {
     return this.contrasenna;
+  }
+
+  getCedula() {
+    return this.cedula;
   }
 
   getDifuntos() {
