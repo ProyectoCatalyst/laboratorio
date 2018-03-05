@@ -51,18 +51,6 @@ class Animador{
     this.nombreAnimador = pnombreAnimador;
     this.costoAnimador = pcostoAnimador;
   }
-
-  getFecha(){
-    return `${this.fecha.getDay()}/${this.fecha.getMonth()}/${this.fecha.getYear()}`
-  }
-
-  getDifuntos(){
-    return this.difuntos;
-  }
-
-  setDifunto(pnuevoDifunto) {
-    this.difuntos.push(pnuevoDifunto);
-  }
 }
 
 class Difunto {
