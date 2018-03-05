@@ -32,8 +32,20 @@ class Usuario {
     return this.contrasenna;
   }
 
-  getCedula() {
-    return this.cedula;
+  getDifuntos() {
+    return this.difuntos
+  }
+
+  setDifuntos(pdifunto){
+    this.difuntos.push(pdifunto);
+  }
+}
+
+class Animador{
+  constructor(pcodigoAnimador,pnombreAnimador,pcostoAnimador){
+    this.codigoAnimador = pcodigoAnimador;
+    this.nombreAnimador = pnombreAnimador;
+    this.costoAnimador = pcostoAnimador;
   }
 
   getFecha(){
