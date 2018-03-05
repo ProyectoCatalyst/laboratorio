@@ -47,7 +47,6 @@ class Usuario {
   setDifunto(pnuevoDifunto) {
     this.difuntos.push(pnuevoDifunto);
   }
-
 }
 
 class Difunto {
