@@ -31,13 +31,34 @@ class Usuario {
     return this.contrasenna;
   }
 
-  getCedula() {
-    return this.cedula;
+  getDifuntos() {
+    return this.difuntos
+  }
+
+  setDifuntos(pdifunto){
+    this.difuntos.push(pdifunto);
+  }
+}
+
+class Animador{
+  constructor(pcodigoAnimador,pnombreAnimador,pcostoAnimador){
+    this.codigoAnimador = pcodigoAnimador;
+    this.nombreAnimador = pnombreAnimador;
+    this.costoAnimador = pcostoAnimador;
+  }
+
+  getFecha(){
+    return `${this.fecha.getDay()}/${this.fecha.getMonth()}/${this.fecha.getYear()}`
+  }
+
+  getDifuntos(){
+    return this.difuntos;
   }
 
   setDifunto(pnuevoDifunto) {
     this.difuntos.push(pnuevoDifunto);
   }
+
 }
 
 class Difunto {

@@ -11,28 +11,28 @@
   function routing($stateProvider, $urlRouterProvider, $ocLazyLoad) {
 
     $stateProvider
-      .state('landingPage', {
-        url: '/',
-        templateUrl: './components/landingPage/landingPage.view.html',
-        data:{
-          pageTitle: 'Inicio | Laboratorio 1'
-        }
-      })
+    .state('landingPage', {
+      url: '/',
+      templateUrl: './components/landingPage/landingPage.view.html',
+      data:{
+        pageTitle: 'Inicio | Laboratorio 1'
+      }
+    })
 
-      .state('login', {
-        url: '/login',
-        templateUrl: './components/login/login.view.html',
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/login/login.controller.js')
-          }]
-        },
-        data:{
-          pageTitle: 'Inicio de sesión | Laboratorio 1'
-        },
-        controller: 'controladorInicioSesion',
-        controllerAs: 'vm'
-      })
+    .state('login', {
+      url: '/login',
+      templateUrl: './components/login/login.view.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/login/login.controller.js')
+        }]
+      },
+      data:{
+        pageTitle: 'Inicio de sesión | Laboratorio 1'
+      },
+      controller: 'controladorInicioSesion',
+      controllerAs: 'vm'
+    })
 
       .state('registroUsuarios', {
         url: '/registerUsers',

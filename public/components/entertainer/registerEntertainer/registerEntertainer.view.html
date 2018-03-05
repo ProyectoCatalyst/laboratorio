@@ -1,0 +1,55 @@
+
+<div ng-include="'./components/includes/_header.html'"></div>
+<section class="row">
+  <div class="container">
+    <form class="row" name="frmRegistroAnimadores" ng-submit="vm.registrarAnimador(vm.AnimadorNuevo)"  autocomplete="off">
+    <div class="col-4">
+      <form ng-submit="vm.registrarAnimador(vm.AnimadorNuevo)">
+          <div class="form-group">
+            <label for="txtCodigoAnimador">Código: </label>
+            <input type="number" class="form-control" ng-model="vm.AnimadorNuevo.codigoAnimador" id="txtCodigoAnimador" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="txtNombreAnimador">Nombre: </label>
+            <input type="text" class="form-control" ng-model="vm.AnimadorNuevo.nombreAnimador" id="txtNombreAnimador" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="txtCostoAnimador">Costo por hora:</label>
+            <input type="number" class="form-control" ng-model="vm.AnimadorNuevo.costoAnimador" id="txtCostoAnimador" required>
+          </div>
+        
+          <button type="submit" class="btn btn-primary">Registrar Animador</button>
+      </form>
+    </div>
+
+
+    <div class="col-9">
+      <table class="table">
+        <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Costo</th>
+              <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="animador in vm.listaAnimadores">
+            <td>{{animador.codigoAnimador}}</td>
+            <td>{{animador.nombreAnimador}}</td>
+            <td>{{animador.costoAnimador}}</td>
+            <td>
+              <button type="button" class="btn btn-secondary" ng-click="vm.actualizarAnimador(animador)">Actualizar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</section>
+
+
+
+
