@@ -23,7 +23,7 @@
         <td>{{usuario.nombre}}</td>
         <td>{{usuario.primerApellido}}</td>
         <td>{{usuario.segundoApellido}}</td>
-        <td>{{usuario.cedular}}</td>
+        <td>{{usuario.cedula}}</td>
         <td>{{usuario.fecha}}</td>
         <td>{{usuario.genero}}</td>
         <td>{{usuario.foto}}</td>
@@ -35,6 +35,9 @@
         <td>{{usuario.contrasenna}}</td>
         <td>
           <button class="btn btn-primary" type="button" ng-click="vm.agregarDifunto(usuario)">Agregar Difunto</button>
+        </td>
+        <td>
+          <button class="btn btn-warning" type="button" ng-click="vm.listarDifunto(usuario)">Ver difuntos</button>
         </td>
       </tr>
     </tbody>
