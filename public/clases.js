@@ -32,6 +32,10 @@ class Usuario {
     return this.contrasenna;
   }
 
+  getCedula() {
+    return this.cedula;
+  }
+
   getDifuntos() {
     return this.difuntos
   }
