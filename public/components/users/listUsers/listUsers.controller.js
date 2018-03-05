@@ -4,15 +4,9 @@
     .module('laboratorio')
     .controller('controladorListarUsuario', controladorListarUsuario);
 
-<<<<<<< HEAD
   controladorListarUsuario.$inject = ['$state', '$stateParams', '$http', 'servicioUsuarios'];
 
   function controladorListarUsuario($state, $stateParams, $http, servicioUsuarios) {
-=======
-  controladorListarUsuario.$inject = ['$http', '$state', '$stateParams', 'servicioUsuarios'];
-
-  function controladorListarUsuario($http, $state, $stateParams, servicioUsuarios) {
->>>>>>> master
 
     let vm = this;
 
