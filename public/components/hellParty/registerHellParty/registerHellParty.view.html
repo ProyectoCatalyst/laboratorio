@@ -7,23 +7,23 @@
       <form ng-submit="vm.registrarFiesta(vm.FiestaNueva)">
           <div class="form-group">
             <label for="txtFecha">Fecha de la fiesta: </label>
-            <input type="number" class="form-control" ng-model="vm.FiestaNueva.fecha" id="txtFecha" required>
+            <input type="date" class="form-control" ng-model="vm.FiestaNueva.fecha" id="txtFecha" required>
           </div>
         
         
           <div class="form-group">
-            <label for="txtCostoFiesta">Duración total en horas:</label>
-            <input type="number" class="form-control" ng-model="vm.FiestaNueva.costoHora" id="txtCostoFiesta" required>
+            <label for="txtCostoFiesta">Cantidad de horas de las fiesta:</label>
+            <input type="number" placeholder="Costo por hora $65" class="numeric" pattern="[0-9]" ng-model="vm.FiestaNueva.costoHora" id="txtCostoFiesta" required>
           </div>
 
           <div class="form-group">
-              <label for="lbPago">Seleccione la forma de pago: </label><br>
-            <label>Pilar:
+              <label for="lbPago">Seleccione los animadores: </label><br>
+            <label>Pilar (costo por hora $30):
               <input type="checkbox" ng-model="vm.FiestaNueva.pilar"
                      ng-true-value='true' ng-false-value='false'>
              </label><br/>
 
-            <label>Andrey:
+            <label>Andrey (costo por hora $25):
               <input type="checkbox" ng-model="vm.FiestaNueva.andrey"
                      ng-true-value='true' ng-false-value='false'>
              </label><br/>
@@ -32,7 +32,7 @@
           <div class="metodoPagoFiesta">
             <label for="lbPago">Seleccione la forma de pago: </label>
             
-            <select ng-model="vm.FiestaNueva.tipoPagoFiesta">
+            <select ng-model="vm.FiestaNueva.tipoPagoFiesta" >
               <option value="tarjeta">Tarjeta</option>
               <option  value="efectivo">Efectivo</option>
             </select>
@@ -42,6 +42,10 @@
         
           <button type="submit" class="btn btn-primary">Registrar Fiesta</button>
       </form>
+
+      <div>
+        <p>ffff{{vm.mostrarInfo}}</p>
+      </div>
     </div>
 
 

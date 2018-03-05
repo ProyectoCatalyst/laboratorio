@@ -52,12 +52,12 @@ class Difunto {
 class Fiesta{
 
 
-  constructor(pfecha,phoras,ppilar,pandrey,ppago,pcostoTotal){
+  constructor(pfecha,phoras,ppilar,pandrey,ppago){
     this.fecha = pfecha;
     this.horas = phoras;
     this.pilar = ppilar;
     this.andrey = pandrey;
     this.pago = ppago;
-    this.costoTotal = pcostoTotal;
+    this.costoTotal = 0 ;
   }
 }
