@@ -83,15 +83,6 @@
       actualizarLista(todosLosUsuarios);
       return registroExitoso;
     }
-<<<<<<< HEAD
-  }
-
-  function actualizarLista(listaActualizada){
-    localStorage.setItem('listaUsuariosLS', JSON.stringify(listaActualizada));
-  }
-  
-})();
-=======
     function _retornarDifunto(pidusuario) {
       let todosLosUsuarios = _retornarUsuario();
       let todosLosDifuntos = [];
@@ -148,4 +139,3 @@
     }
   }   
 })(); 
->>>>>>> master

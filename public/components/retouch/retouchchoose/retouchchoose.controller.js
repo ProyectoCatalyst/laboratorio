@@ -17,9 +17,8 @@
     vm.agregarretoques = (pretoques) => {
       let objCompra = new Compra (pretoques.nombre, pretoques.precio),
           // listaCompra = servicioRetoques.getCompra(),
-          listaUsuarios = servicioUsuarios.retornarUsuario(), // me retorna el usuario completo junto con su compra
           difunto = JSON.parse($stateParams.objDifunto), // obtener difunto al que acabo de dar click para agregar un retoque.
-          objDifunto = new Difunto (difunto.apodo, difunto.edad, difunto.genero, difunto.tamanno, difunto.compra);
+          objDifunto = new Difunto (difunto.apodo, difunto.edad, difunto.genero, difunto.tamanno, difunto.compra); // darle formato al difunto a l que voy a agregar la compra
 
       let agregarCompra = compraExistente(objCompra, objDifunto);
 
@@ -43,7 +42,9 @@
 
 
     vm.eliminarCompra = (pcompras) => {
-      let objCompra = new Compra (pcompras.nombre, pcompras.precio);
+      difunto = JSON.parse($stateParams.objDifunto), // obtener difunto al que acabo de dar click para agregar un retoque.
+      objDifunto = new Difunto (difunto.apodo, difunto.edad, difunto.genero, difunto.tamanno, difunto.compra),
+      objCompra = new Compra (pcompras.nombre, pcompras.precio);
 
       servicioRetoques.deleteCompra(objCompra);
 

@@ -89,8 +89,7 @@
       let listaCompra = pobjDifunto.getCompra(); // llamar nuevamente a las compras asociadas al pobjDifunto al cual acabo de acabo de hacer click para agregar la compra o servicio
       listaCompra.push(pobjCompra); // a la lista de compras que tiene el difunto le agrego la nueva compra
       pobjDifunto.push(listaCompra); // al difunto le agrego la lista d compras con la nueva compra
-      
-      
+           
       
       // localStorage.setItem('compraLS', JSON.stringify(listaCompra));
 
@@ -121,26 +120,31 @@
     }
 
     function _deleteCompra(pobjCompra){
-      let listaCompraLocal = _getCompra(), // getServcios de un difunto
-          listaCompraFinal = [];
+      let listaDifuntos = servicioUsuarios.retornarDifunto(faltausuarioactivo); // getServcios de un difunto
 
-      for(let i=0; i<listaCompraLocal.length; i++){
-        if(listaCompraLocal[i].nombre == pobjCompra.nombre){ // compras en el sistema junto con la compra que deseo eliminar, respectivamente
+      for(let i=0; i<listaDifuntos.length; i++){
+          let listaCompraLocal = listaDifuntos[i].getCompras(),
+              listaCompraFinal = [];
+        for(let j=0; j<listaCompraLocal.length; j++){
+
+          if(listaCompraLocal[i].nombre == pobjCompra.nombre){ // compras en el sistema junto con la compra que deseo eliminar, respectivamente
 
         }else{
           listaCompraFinal.push(listaCompraLocal[i])
         }
       }
+      listaDifuntos[j].push(listaCompraFinal);
+    }
 
-      actualizarListaCompras(listaCompraFinal);
+      actualizarListaDifuntos(listaDifuntos);
 
       // obtener la compra que deseo eliminar, y comparar eso con las compras que tiene el difunto con el cual accedi y continuar con la eliminacion
     }
 
-    function actualizarListaCompras(plistaCompraFinal){
+    function actualizarListaDifuntos(plistaDifuntos){
 
       // console.log(plistaCompraFinal)
-      localStorage.setItem('compraLS', JSON.stringify(plistaCompraFinal));
+      // localStorage.setItem('compraLS', JSON.stringify(plistaCompraFinal));
     }
 
 
