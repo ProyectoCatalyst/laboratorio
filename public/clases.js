@@ -39,13 +39,13 @@ class Usuario {
     return this.difuntos
   }
 
-  setDifuntos(pdifunto){
+  setDifuntos(pdifunto) {
     this.difuntos.push(pdifunto);
   }
 }
 
-class Animador{
-  constructor(pcodigoAnimador,pnombreAnimador,pcostoAnimador){
+class Animador {
+  constructor(pcodigoAnimador, pnombreAnimador, pcostoAnimador) {
     this.codigoAnimador = pcodigoAnimador;
     this.nombreAnimador = pnombreAnimador;
     this.costoAnimador = pcostoAnimador;
@@ -59,24 +59,28 @@ class Difunto {
     this.genero = pgenero;
     this.tamanno = ptamanno;
     this.clienteID = '';
-    this.entierro = '';
+    this.entierro = [];
   }
 
-  setEntierro(pnuevoEntierro){
-    this.entierro = pnuevoEntierro;
+  setEntierro(pnuevoEntierro) {
+    this.entierro.push(pnuevoEntierro);
   }
 
-  setCedulaCliente(pCedulaCliente){
-     this.clienteID = pCedulaCliente;
+  setCedulaCliente(pCedulaCliente) {
+    this.clienteID = pCedulaCliente;
+  }
+
+  getCedulaCliente() {
+    return this.clienteID;
   }
 }
 
 class Entierro {
-  constructor (phoraInicio, phoraFinal, pfecha, plugar, pprioridad){
+  constructor(phoraInicio, phoraFinal, pfecha, plugar, pprioridad) {
     this.horaInicio = phoraInicio;
     this.horaFinal = phoraFinal;
     this.fecha = pfecha;
-    this.lugar = plugar; 
+    this.lugar = plugar;
     this.prioridad = pprioridad;
   }
 }

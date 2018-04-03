@@ -119,7 +119,6 @@
           },
           controller: 'controladorRegistroEntierro',
           controllerAs: 'vm'
-          
       });
 
     //Por el amor de Dios comenten esto si surge un problema raro y corran la aplicación :)

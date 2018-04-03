@@ -21,7 +21,7 @@
 
     vm.registrarUndead = (pUndeadNuevo) => {
 
-      let objUsuarioTem = new Usuario(objSinFormatoUsuario.nombre, objSinFormatoUsuario.primerApellido, objSinFormatoUsuario.segundoApellido, objSinFormatoUsuario.cedula, objSinFormatoUsuario.fecha, objSinFormatoUsuario.genero, objSinFormatoUsuario.foto, objSinFormatoUsuario.ubicacion, objSinFormatoUsuario.privincia, objSinFormatoUsuario.canton, objSinFormatoUsuario.distrito, objSinFormatoUsuario.usuario, objSinFormatoUsuario.correo, objSinFormatoUsuario.contrasenna);
+      let objUsuarioTem = new Usuario(objSinFormatoUsuario.cedula, objSinFormatoUsuario.nombre, objSinFormatoUsuario.primerApellido, objSinFormatoUsuario.segundoApellido, objSinFormatoUsuario.genero, objSinFormatoUsuario.provincia, objSinFormatoUsuario.canton, objSinFormatoUsuario.distrito, objSinFormatoUsuario.usuario, objSinFormatoUsuario.correo, objSinFormatoUsuario.contrasenna, objSinFormatoUsuario.fecha);
 
       let objNuevoUndead = new Difunto (pUndeadNuevo.apodo, pUndeadNuevo.genero, pUndeadNuevo.edad, pUndeadNuevo.tamanno);
 

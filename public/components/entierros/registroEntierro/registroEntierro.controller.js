@@ -1,34 +1,34 @@
-(()=>{
+(() => {
   'use strict';
   angular
-  .module('laboratorio')
-  .controller('controladorRegistroEntierro', controladorRegistroEntierro);
-  
+    .module('funeraria')
+    .controller('controladorRegistroEntierro', controladorRegistroEntierro);
+
   controladorRegistroEntierro.$inject = ['$stateParams', '$state', 'servicioUsuarios'];
 
-  function controladorRegistroEntierro ($stateParams, $state, servicioUsuarios){
+  function controladorRegistroEntierro($stateParams, $state, servicioUsuarios) {
     let vm = this;
 
-    if(!$stateParams.objDifunto){
-      $state.go('listUsers');
+    if (!$stateParams.objDifunto) {
+      $state.go('listarUsuarios');
     }
 
     let objsinFormatoDifunto = JSON.parse($stateParams.objDifunto);
-    
+
     vm.nuevoEntierro = {};
     console.log(objsinFormatoDifunto);
 
-    vm.registrarEntierro = (pnuevoEntierro)=>{
+    vm.registrarEntierro = (pnuevoEntierro) => {
 
-      let objEntierroTem = new Entierro (pnuevoEntierro.horaInicio, pnuevoEntierro.horaFinal, pnuevoEntierro.lugar, pnuevoEntierro.prioridad);
- 
-      let objNuevoUndead = new Difunto (objsinFormatoDifunto.apodo, objsinFormatoDifunto.genero, objsinFormatoDifunto.edad, objsinFormatoDifunto.tamanno);
+      let objEntierroTem = new Entierro(pnuevoEntierro.horaInicio, pnuevoEntierro.horaFinal, pnuevoEntierro.lugar, pnuevoEntierro.prioridad);
 
-      let aDifuntos= [objNuevoUndead, objEntierroTem];
+      let objNuevoUndead = new Difunto(objsinFormatoDifunto.apodo, objsinFormatoDifunto.genero, objsinFormatoDifunto.edad, objsinFormatoDifunto.tamanno);
 
-      console.log(Difuntos); 
-      console.log(Entierros); 
-    
+      let aDifuntos = [objNuevoUndead, objEntierroTem];
+
+      console.log(Difuntos);
+      console.log(Entierros);
+
       let registro = servicioUsuarios.agregarEntierro(IDCliente);
 
       if (registro == true) {
@@ -40,6 +40,8 @@
       }
     }
 
+    vm.regresar = () => {
+      $state.go('listarUsuarios');
     }
   }
-)();
+})();
